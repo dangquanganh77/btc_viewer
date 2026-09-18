@@ -62,21 +62,18 @@
             Whether you want to sponsor a tournament, volunteer, or integrate your brand into our athletic network in Da Nang, we want to hear from you.
         </div>
         <form class="flex flex-col gap-9">
-            <!-- Full Name Field -->
             <div class="relative pt-4">
                 <input type="text" id="name" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors rounded-none" placeholder="Full Name">
                 <label for="name" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">
                     FULL NAME
                 </label>
             </div>
-            <!-- Email Address Field -->
             <div class="relative pt-4">
                 <input type="email" id="email" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors rounded-none" placeholder="Email Address">
                 <label for="email" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">
                     EMAIL ADDRESS
                 </label>
             </div>
-            <!-- Inquiry Field -->
             <div class="relative pt-4">
                 <textarea id="message" rows="4" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors resize-none rounded-none" placeholder="Inquiry"></textarea>
                 <label for="message" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">
@@ -149,8 +146,11 @@
             </div>
         </section>
 
-        <!-- 3. Culture & Mission Manifesto -->
+        <!-- 3. Culture & Mission Manifesto (with Graphical Paper Texture) -->
         <section class="relative py-24 md:py-32 px-4 md:px-12 min-h-screen flex items-center mission-section overflow-hidden z-0 bg-ink">
+            <!-- Graphical Paper/Blueprint Texture Layer -->
+            <div class="paper-tactile-texture"></div>
+            
             <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-14 lg:gap-12 items-center justify-between relative z-10">
                 <div class="w-full lg:w-1/2 text-center lg:text-left border-l-4 border-sapphire pl-6 md:pl-10">
                     <div class="leading-none mb-3">
@@ -164,7 +164,7 @@
                     <h3 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase text-cream/90 leading-tight mb-8 manifesto-text tracking-wide bg-navy inline-block px-4 py-1.5 mt-2">
                         STILL RUN BY THE PLAYERS.
                     </h3>
-                    <p class="text-xs sm:text-sm text-cream/70 max-w-lg mx-auto lg:mx-0 leading-relaxed manifesto-text font-mono border border-cream/15 p-5 sm:p-6 bg-navy/30">
+                    <p class="text-xs sm:text-sm text-cream/70 max-w-lg mx-auto lg:mx-0 leading-relaxed manifesto-text font-mono border border-cream/15 p-5 sm:p-6 bg-navy/40 backdrop-blur-[2px]">
                         Born in Da Nang, Beyond the Court is an NGO organizing high-energy, competitive youth sports tournaments across multiple disciplines. We believe in raw competition, community resilience, and giving back. 100% of our proceeds directly fund local charities. Space, velocity, impact.
                     </p>
                 </div>
@@ -230,8 +230,11 @@
             </div>
         </section>
 
-        <!-- 5. In Action -->
+        <!-- 5. In Action (with Graphical Paper Texture) -->
         <section class="py-24 md:py-32 bg-ink relative overflow-hidden z-10 border-b border-cream/10" id="gallery">
+            <!-- Graphical Paper/Blueprint Texture Layer -->
+            <div class="paper-tactile-texture"></div>
+
             <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10 mb-14">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-5 border-b-2 border-sapphire pb-5">
                     <h2 class="font-display text-5xl md:text-7xl uppercase text-cream leading-none tracking-tight m-0">IN ACTION</h2>
@@ -242,7 +245,7 @@
             </div>
 
             <!-- Track 1 -->
-            <div class="gallery-viewport w-full overflow-hidden mb-6 relative">
+            <div class="gallery-viewport w-full overflow-hidden mb-6 relative z-10">
                 <div class="gallery-rail flex gap-6 w-max" id="track-left">
                     <div class="tilt-card cursor-interact w-[65vw] sm:w-[45vw] md:w-[28vw] h-[34vh] flex-shrink-0 perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
@@ -279,7 +282,7 @@
             </div>
 
             <!-- Track 2 -->
-            <div class="gallery-viewport w-full overflow-hidden relative">
+            <div class="gallery-viewport w-full overflow-hidden relative z-10">
                 <div class="gallery-rail flex gap-6 w-max" id="track-right">
                     <div class="tilt-card cursor-interact w-[55vw] sm:w-[40vw] md:w-[24vw] h-[34vh] flex-shrink-0 perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
@@ -380,11 +383,11 @@
         </section>
     </main>
 
-    <!-- 7. Footer -->
-    <footer class="bg-navy pt-36 pb-14 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
-        <!-- Animated Background Watermark Marquee (Moving Left) -->
-        <div class="footer-bg-marquee absolute top-1/2 left-0 w-full transform -translate-y-1/2 pointer-events-none select-none z-0 overflow-hidden opacity-[0.06]">
-            <div class="footer-marquee-track flex whitespace-nowrap font-display text-[16vw] uppercase leading-none tracking-[0.15em] text-cream">
+    <!-- 7. Footer (with Balanced Vertical Spacing) -->
+    <footer class="bg-navy pt-44 md:pt-48 pb-16 md:pb-20 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
+        <!-- Elevated Background Watermark Track -->
+        <div class="footer-bg-marquee absolute top-[40%] left-0 w-full transform -translate-y-1/2 pointer-events-none select-none z-0 overflow-hidden opacity-[0.06]">
+            <div class="footer-marquee-track flex whitespace-nowrap font-display text-[15vw] uppercase leading-none tracking-[0.15em] text-cream">
                 <span class="mr-16 md:mr-24">BEYOND THE COURT</span>
                 <span class="mr-16 md:mr-24">BEYOND THE COURT</span>
                 <span class="mr-16 md:mr-24">BEYOND THE COURT</span>
@@ -392,12 +395,13 @@
         </div>
         
         <div class="relative z-10 flex flex-col items-center w-full">
-            <button class="cursor-interact open-drawer-trigger group relative overflow-hidden px-8 sm:px-12 py-5 sm:py-6 bg-ink border border-sapphire text-cream font-display text-2xl sm:text-4xl uppercase tracking-widest hover:border-cream transition-colors duration-500 mb-16 flex items-center justify-center rounded-none shadow-[4px_4px_0_0_#22396F] hover:shadow-[8px_8px_0_0_#FCF1D0] transform hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0 active:translate-x-0">
+            <button class="cursor-interact open-drawer-trigger group relative overflow-hidden px-8 sm:px-12 py-5 sm:py-6 bg-ink border border-sapphire text-cream font-display text-2xl sm:text-4xl uppercase tracking-widest hover:border-cream transition-colors duration-500 flex items-center justify-center rounded-none shadow-[4px_4px_0_0_#22396F] hover:shadow-[8px_8px_0_0_#FCF1D0] transform hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0 active:translate-x-0">
                 <span class="relative z-10 transition-colors stroke-cream text-transparent group-hover:text-ink group-hover:stroke-none">REACH OUT TO US</span>
                 <div class="absolute inset-0 w-full h-full bg-cream transform scale-y-0 origin-bottom transition-transform duration-500 ease-expo group-hover:scale-y-100 group-hover:origin-top"></div>
             </button>
             
-            <div class="w-full max-w-7xl border-t border-cream/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs tracking-widest uppercase">
+            <!-- Spacing Clearance Added Before Bottom Divider Line -->
+            <div class="w-full max-w-7xl border-t border-cream/20 pt-8 mt-28 md:mt-36 flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs tracking-widest uppercase">
                 <div class="flex items-center gap-3">
                     <span class="w-2.5 h-2.5 bg-sapphire inline-block"></span>
                     <p>BEYOND THE COURT NGO. DA NANG, VIETNAM.</p>
