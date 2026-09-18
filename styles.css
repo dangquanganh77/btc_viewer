@@ -46,15 +46,14 @@ a, button, input, textarea, select {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
-  mix-blend-mode: screen;
+  /* Double-transparency bug fixed: Relying directly on RGBA channels instead of global opacity */
   background-image: 
-    /* Paper Grain Simulation */
-    radial-gradient(rgba(252, 241, 208, 0.3) 1px, transparent 1px),
+    /* Paper Grain / Dot Simulation */
+    radial-gradient(rgba(252, 241, 208, 0.15) 1px, transparent 1px),
     /* Technical Gridlines */
-    linear-gradient(to right, rgba(252, 241, 208, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(252, 241, 208, 0.15) 1px, transparent 1px);
-  background-size: 16px 16px, 48px 48px, 48px 48px;
+    linear-gradient(to right, rgba(252, 241, 208, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(252, 241, 208, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px, 64px 64px, 64px 64px;
 }
 
 /* Lenis */
