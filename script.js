@@ -116,9 +116,8 @@ gsap.from(".manifesto-text", {
   scrollTrigger: { trigger: ".mission-section", start: "top 75%" }
 });
 
-// 7. Dynamic Setup After Asset Load (Vault & Moving Galleries)
+// 7. Dynamic Setup After Asset Load
 window.addEventListener('load', () => {
-  // A. Vault Horizontal Scroll Pin
   const vault = document.querySelector('.vault-container');
   if (vault) {
       gsap.to(vault, {
@@ -134,21 +133,18 @@ window.addEventListener('load', () => {
       });
   }
 
-  // B. Gallery Moving Tracks (Reliable Auto-Scroll with Pause on Hover)
+  // B. Gallery Moving Tracks (TimeScale Deceleration bounded to images only)
   const trackLeft = document.getElementById('track-left');
   const trackRight = document.getElementById('track-right');
 
   if (trackLeft && trackRight) {
-      // Calculate exact half width for seamless infinite looping
       const halfWidthLeft = trackLeft.scrollWidth / 2;
       const loopLeft = gsap.to(trackLeft, {
           x: -halfWidthLeft,
           duration: 30,
           ease: "none",
           repeat: -1,
-          modifiers: {
-              x: gsap.utils.unitize(x => parseFloat(x) % halfWidthLeft)
-          }
+          modifiers: { x: gsap.utils.unitize(x => parseFloat(x) % halfWidthLeft) }
       });
 
       const halfWidthRight = trackRight.scrollWidth / 2;
@@ -166,33 +162,31 @@ window.addEventListener('load', () => {
           }
       });
 
-      // Pause tracks when cursor enters the gallery container
-      const gallerySection = document.getElementById('gallery');
-      if (gallerySection) {
-          gallerySection.addEventListener('mouseenter', () => {
-              loopLeft.pause();
-              loopRight.pause();
+      // Target hitboxes exactly on the images (.tilt-card), preventing stops on the padding gaps
+      const galleryCards = document.querySelectorAll('#gallery .tilt-card');
+      galleryCards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+              gsap.to([loopLeft, loopRight], { timeScale: 0, duration: 0.4, ease: "power2.out", overwrite: true });
           });
-          gallerySection.addEventListener('mouseleave', () => {
-              loopLeft.play();
-              loopRight.play();
+          card.addEventListener('mouseleave', () => {
+              gsap.to([loopLeft, loopRight], { timeScale: 1, duration: 0.4, ease: "power2.inOut", overwrite: true });
           });
-      }
+      });
   }
 
-  // C. Footer Background Text (Moving Forward / Left to Right)
+  // C. Footer Background Text (Moves Forward / Left Direction)
   const footerTrack = document.querySelector('.footer-marquee-track');
   if (footerTrack) {
       gsap.fromTo(footerTrack, 
-          { xPercent: -50 }, 
-          { xPercent: 0, duration: 40, ease: "none", repeat: -1 }
+          { xPercent: 0 }, 
+          { xPercent: -50, duration: 40, ease: "none", repeat: -1 }
       );
   }
 
   ScrollTrigger.refresh();
 });
 
-// 8. Kinetic Pan & 3D Tilt for all Cards
+// 8. Kinetic Pan & 3D Tilt
 if (!isTouchDevice) {
   document.querySelectorAll('.img-hover').forEach(container => {
       const img = container.querySelector('img');
