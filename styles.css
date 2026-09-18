@@ -40,6 +40,23 @@ a, button, input, textarea, select {
   position: relative;
 }
 
+/* Graphical Paper / Blueprint Tactile Texture Layer */
+.paper-tactile-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  background-image: 
+    /* Paper Grain Simulation */
+    radial-gradient(rgba(252, 241, 208, 0.3) 1px, transparent 1px),
+    /* Technical Gridlines */
+    linear-gradient(to right, rgba(252, 241, 208, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(252, 241, 208, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px, 48px 48px, 48px 48px;
+}
+
 /* Lenis */
 html.lenis, html.lenis body {
   height: auto;
