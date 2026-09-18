@@ -9,7 +9,6 @@
     <link rel="icon" type="image/jpeg" href="assets/finallogo-removebg-preview.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Tactical/Brutalist Font Pairings: Anton (Display) & Space Mono (Technical) -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -33,12 +32,12 @@
     <div class="grid-texture"></div>
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-40 py-4 sm:py-6 px-4 md:px-12 flex justify-between items-center bg-ink/90 backdrop-blur-md border-b border-cream/20 transition-all duration-300">
-        <div class="flex items-center gap-4 cursor-interact">
-            <img src="assets/logohead_icemandrey_nobg_2.jpg" alt="Beyond the Court Logo" class="h-6 sm:h-8 w-auto mix-blend-screen opacity-100">
-            <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream hover:text-sapphire transition-colors duration-300 mt-1">BEYOND THE COURT</span>
+    <header class="fixed top-0 left-0 w-full z-40 py-4 sm:py-5 px-4 md:px-12 flex justify-between items-center bg-ink/95 backdrop-blur-md border-b border-cream/20">
+        <div class="flex items-center gap-3 sm:gap-4 cursor-interact">
+            <img src="assets/logohead_icemandrey_nobg_2.jpg" alt="Beyond the Court Logo" class="h-7 sm:h-8 w-auto mix-blend-screen opacity-100">
+            <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream hover:text-sapphire transition-colors mt-0.5">BEYOND THE COURT</span>
         </div>
-        <button id="open-drawer-btn" class="cursor-interact group relative px-6 py-2 overflow-hidden border border-cream/40 text-cream font-bold text-xs sm:text-sm tracking-widest uppercase transition-colors duration-300 bg-ink">
+        <button id="open-drawer-btn" class="cursor-interact group relative px-5 sm:px-7 py-2.5 overflow-hidden border border-cream/50 text-cream font-bold text-xs sm:text-sm tracking-widest uppercase transition-colors duration-300 bg-ink rounded-none">
             <span class="relative z-10 group-hover:text-ink transition-colors duration-300 text-center block w-full whitespace-nowrap">REACH OUT TO US</span>
             <div class="absolute inset-0 h-full w-full bg-cream transform scale-x-0 origin-right transition-transform duration-500 ease-expo group-hover:scale-x-100 group-hover:origin-left"></div>
         </button>
@@ -46,172 +45,174 @@
 
     <!-- Partner Slide-out Drawer -->
     <div id="drawer-overlay" class="fixed inset-0 bg-ink/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none"></div>
-    <aside id="partner-drawer" class="fixed top-0 right-0 w-full max-w-lg h-full bg-navy text-cream z-50 transform translate-x-full transition-transform duration-700 ease-expo flex flex-col p-8 md:p-16 overflow-y-auto border-l border-cream/20">
-        <div class="flex justify-between items-center mb-16 pt-4">
+    <aside id="partner-drawer" class="fixed top-0 right-0 w-full max-w-lg h-full bg-navy text-cream z-50 transform translate-x-full transition-transform duration-700 ease-expo flex flex-col p-8 md:p-14 overflow-y-auto border-l border-cream/20">
+        <div class="flex justify-between items-center mb-12 pt-4">
             <h2 class="font-display text-3xl sm:text-4xl text-cream uppercase tracking-wider">JOIN THE MOVEMENT</h2>
-            <button id="close-drawer-btn" class="cursor-interact text-cream hover:text-sapphire transition-colors p-2 border border-cream/20 bg-ink">
+            <button id="close-drawer-btn" class="cursor-interact text-cream hover:text-sapphire transition-colors p-2 border border-cream/30 bg-ink">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
-        <div class="mb-10 text-cream/70 text-sm font-light leading-relaxed border-l-2 border-sapphire pl-4">
+        <div class="mb-10 text-cream/70 text-xs sm:text-sm font-light leading-relaxed border-l-2 border-sapphire pl-4">
             Whether you want to sponsor a tournament, volunteer, or integrate your brand into our athletic network in Da Nang, we want to hear from you.
         </div>
-        <form class="flex flex-col gap-8">
+        <form class="flex flex-col gap-7">
             <div class="relative">
                 <input type="text" id="name" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3 text-cream placeholder-transparent focus:outline-none focus:border-sapphire transition-colors rounded-none" placeholder="Name">
-                <label for="name" class="absolute left-4 top-3 text-cream/50 text-sm transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Full Name</label>
+                <label for="name" class="absolute left-4 top-3 text-cream/50 text-xs transition-all peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Full Name</label>
             </div>
             <div class="relative">
                 <input type="email" id="email" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3 text-cream placeholder-transparent focus:outline-none focus:border-sapphire transition-colors rounded-none" placeholder="Email">
-                <label for="email" class="absolute left-4 top-3 text-cream/50 text-sm transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Email Address</label>
+                <label for="email" class="absolute left-4 top-3 text-cream/50 text-xs transition-all peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Email Address</label>
             </div>
             <div class="relative">
                 <textarea id="message" rows="4" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3 text-cream placeholder-transparent focus:outline-none focus:border-sapphire transition-colors resize-none rounded-none" placeholder="Message"></textarea>
-                <label for="message" class="absolute left-4 top-3 text-cream/50 text-sm transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Inquiry</label>
+                <label for="message" class="absolute left-4 top-3 text-cream/50 text-xs transition-all peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Inquiry</label>
             </div>
-            <button type="button" class="cursor-interact mt-4 bg-sapphire text-cream py-4 font-bold tracking-widest uppercase hover:bg-cream hover:text-ink transition-colors duration-300 border border-sapphire hover:border-cream rounded-none">Submit Request</button>
+            <button type="button" class="cursor-interact mt-2 bg-sapphire text-cream py-4 font-bold tracking-widest uppercase hover:bg-cream hover:text-ink transition-colors duration-300 border border-sapphire hover:border-cream rounded-none">Submit Request</button>
         </form>
     </aside>
 
     <main>
-        <!-- 1. Kinetic Hero Section (Rigid & Heavy) -->
-        <section class="relative min-h-[90vh] md:min-h-screen pt-32 pb-16 px-4 md:px-12 flex flex-col justify-center overflow-hidden bg-ink" id="hero">
-            <!-- Grid Lines -->
-            <div class="absolute inset-0 pointer-events-none z-0 opacity-20">
-                <div class="h-full w-[1px] bg-cream absolute left-[10%]"></div>
-                <div class="h-full w-[1px] bg-cream absolute right-[10%]"></div>
-                <div class="w-full h-[1px] bg-cream absolute top-[20%]"></div>
-                <div class="w-full h-[1px] bg-cream absolute bottom-[20%]"></div>
+        <!-- 1. Hero Section (Adjusted Spacing, Clearly Rendered Text) -->
+        <section class="relative min-h-[92vh] pt-44 md:pt-52 pb-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden bg-ink" id="hero">
+            <!-- Tactical Guide Grid Lines -->
+            <div class="absolute inset-0 pointer-events-none z-0 opacity-15">
+                <div class="h-full w-[1px] bg-cream absolute left-[8%]"></div>
+                <div class="h-full w-[1px] bg-cream absolute right-[8%]"></div>
+                <div class="w-full h-[1px] bg-cream absolute top-[18%]"></div>
+                <div class="w-full h-[1px] bg-cream absolute bottom-[18%]"></div>
             </div>
 
-            <div class="z-10 flex flex-col w-full max-w-7xl mx-auto pl-0 md:pl-[10%] relative">
+            <div class="z-10 flex flex-col w-full max-w-7xl mx-auto pl-0 md:pl-[8%] relative">
                 <div class="flex flex-col w-full">
-                    <div class="overflow-hidden mb-[-1%]">
-                        <h1 class="hero-title font-display text-[18vw] sm:text-[15vw] md:text-[12vw] leading-[0.8] text-cream uppercase tracking-tight">MORE THAN</h1>
+                    <div class="overflow-hidden leading-none">
+                        <h1 class="hero-title font-display text-[17vw] sm:text-[14vw] md:text-[10.5vw] text-cream uppercase tracking-tight m-0 block">
+                            MORE THAN
+                        </h1>
                     </div>
-                    <div class="overflow-hidden">
-                        <h1 class="hero-title font-display text-[18vw] sm:text-[15vw] md:text-[12vw] leading-[0.8] text-transparent outline-text uppercase tracking-tight">JUST A GAME</h1>
+                    <div class="overflow-hidden leading-none mt-1 sm:mt-2">
+                        <h1 class="hero-title font-display text-[17vw] sm:text-[14vw] md:text-[10.5vw] text-transparent stroke-cream uppercase tracking-tight m-0 block">
+                            JUST A GAME
+                        </h1>
                     </div>
                 </div>
                 
-                <div class="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center gap-6 w-full md:w-auto hero-fade-in opacity-0">
-                    <button class="cursor-interact group flex items-center justify-between gap-6 bg-sapphire text-cream px-8 py-4 border border-sapphire uppercase tracking-widest text-sm hover:bg-cream hover:text-ink transition-all duration-300 w-full sm:w-auto rounded-none" onclick="document.getElementById('vault').scrollIntoView()">
+                <div class="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center gap-5 w-full md:w-auto hero-fade-in opacity-0">
+                    <button class="cursor-interact group flex items-center justify-between gap-6 bg-sapphire text-cream px-8 py-4 border border-sapphire uppercase tracking-widest text-xs sm:text-sm hover:bg-cream hover:text-ink transition-all duration-300 w-full sm:w-auto rounded-none" onclick="document.getElementById('vault').scrollIntoView()">
                         <span class="font-bold">SEE TOURNAMENTS</span>
-                        <svg class="transform transition-transform group-hover:translate-x-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg class="transform transition-transform group-hover:translate-x-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
-                    <a href="#" class="cursor-interact open-drawer-trigger bg-ink text-cream px-8 py-4 border border-cream/50 uppercase tracking-widest text-sm hover:border-sapphire hover:text-sapphire transition-all duration-300 w-full sm:w-auto text-center rounded-none font-bold">
+                    <a href="#" class="cursor-interact open-drawer-trigger bg-ink text-cream px-8 py-4 border border-cream/50 uppercase tracking-widest text-xs sm:text-sm hover:border-sapphire hover:text-sapphire transition-all duration-300 w-full sm:w-auto text-center rounded-none font-bold">
                         REACH OUT TO US
                     </a>
                 </div>
             </div>
 
-            <!-- Tactical Floating Images -->
+            <!-- Parallax Floating Images with Proportional Spacing -->
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" id="hero-parallax-container">
-                <div class="parallax-img absolute top-[10%] right-[5%] w-[35vw] md:w-[18vw] aspect-portrait overflow-hidden opacity-0 tech-border mix-blend-screen bg-navy">
-                    <img src="assets/IMG_6254.jpg" alt="Athletes" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto">
-                    <div class="absolute top-2 left-2 text-[10px] bg-ink/80 text-cream px-1 border border-cream/20">CAM 01</div>
+                <!-- Top Image: Lowered to top-[22%] to guarantee comfortable clearance from top bar -->
+                <div class="parallax-img absolute top-[22%] right-[5%] w-[32vw] md:w-[17vw] aspect-portrait overflow-hidden opacity-0 tech-frame bg-navy">
+                    <div class="img-hover w-full h-full">
+                        <img src="assets/IMG_6254.jpg" alt="Athletes" class="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto">
+                    </div>
+                    <div class="absolute top-2 left-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30">CAM_01</div>
                 </div>
-                <div class="parallax-img absolute bottom-[10%] right-[25%] w-[45vw] md:w-[25vw] aspect-video overflow-hidden opacity-0 tech-border mix-blend-screen bg-navy">
-                    <img src="assets/Copy of DSC_0674.jpg" alt="Action Shot" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto">
-                    <div class="absolute top-2 right-2 text-[10px] bg-ink/80 text-cream px-1 border border-cream/20">REC.</div>
+                <!-- Bottom Image -->
+                <div class="parallax-img absolute bottom-[8%] right-[18%] md:right-[22%] w-[42vw] md:w-[23vw] aspect-video overflow-hidden opacity-0 tech-frame bg-navy">
+                    <div class="img-hover w-full h-full">
+                        <img src="assets/Copy of DSC_0674.jpg" alt="Action Shot" class="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto">
+                    </div>
+                    <div class="absolute top-2 right-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30">REC_LIVE</div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Velocity Marquee 1 (Rigid Dark Mode) -->
-        <section class="py-6 bg-sapphire border-y border-cream/20 overflow-hidden relative z-10 shadow-[0_0_30px_rgba(34,57,111,0.3)]">
+        <!-- 2. Primary Running Bar -->
+        <section class="py-5 bg-sapphire border-y border-cream/20 overflow-hidden relative z-10">
             <div class="marquee-container flex whitespace-nowrap w-full">
                 <div class="marquee-track flex text-cream font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-wide">
-                    <div class="px-8 flex items-center">BEYOND THE COURT <span class="mx-8 text-cream/30 font-mono text-3xl">//</span> EST 2026 <span class="mx-8 text-cream/30 font-mono text-3xl">//</span> MULTI SPORTS <span class="mx-8 text-cream/30 font-mono text-3xl">//</span></div>
-                    <div class="px-8 flex items-center">BEYOND THE COURT <span class="mx-8 text-cream/30 font-mono text-3xl">//</span> EST 2026 <span class="mx-8 text-cream/30 font-mono text-3xl">//</span> MULTI SPORTS <span class="mx-8 text-cream/30 font-mono text-3xl">//</span></div>
-                    <div class="px-8 flex items-center">BEYOND THE COURT <span class="mx-8 text-cream/30 font-mono text-3xl">//</span> EST 2026 <span class="mx-8 text-cream/30 font-mono text-3xl">//</span> MULTI SPORTS <span class="mx-8 text-cream/30 font-mono text-3xl">//</span></div>
+                    <div class="px-8 flex items-center">BEYOND THE COURT <span class="mx-8 text-cream/30 font-mono text-2xl">//</span> EST 2026 <span class="mx-8 text-cream/30 font-mono text-2xl">//</span> MULTI SPORTS <span class="mx-8 text-cream/30 font-mono text-2xl">//</span></div>
+                    <div class="px-8 flex items-center">BEYOND THE COURT <span class="mx-8 text-cream/30 font-mono text-2xl">//</span> EST 2026 <span class="mx-8 text-cream/30 font-mono text-2xl">//</span> MULTI SPORTS <span class="mx-8 text-cream/30 font-mono text-2xl">//</span></div>
+                    <div class="px-8 flex items-center">BEYOND THE COURT <span class="mx-8 text-cream/30 font-mono text-2xl">//</span> EST 2026 <span class="mx-8 text-cream/30 font-mono text-2xl">//</span> MULTI SPORTS <span class="mx-8 text-cream/30 font-mono text-2xl">//</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Culture & Mission Manifesto (Brutalist Blocks) -->
+        <!-- 3. Culture & Mission Manifesto (Full Text Visible, Sharp Frames) -->
         <section class="relative py-24 md:py-32 px-4 md:px-12 min-h-screen flex items-center mission-section overflow-hidden z-0 bg-ink">
-            <div class="absolute inset-0 bg-[url('assets/IMG_4602.jpg')] bg-cover bg-center opacity-5 mix-blend-screen pointer-events-none z-0"></div>
-            
-            <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-16 lg:gap-12 items-center justify-between relative z-10">
-                <div class="w-full lg:w-1/2 text-center lg:text-left border-l-4 border-sapphire pl-6 md:pl-12">
-                    <h2 class="font-display text-5xl sm:text-6xl md:text-8xl uppercase text-cream leading-[0.9] mb-4 font-normal manifesto-text tracking-tight">
-                        STARTED ON A <br> <span class="text-transparent outline-text">RENTED COURT.</span>
-                    </h2>
-                    <h3 class="font-display text-3xl sm:text-4xl md:text-5xl uppercase text-cream/80 leading-[1] mb-12 manifesto-text tracking-wide bg-navy inline-block px-4 py-2 mt-4">
+            <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-14 lg:gap-12 items-center justify-between relative z-10">
+                <div class="w-full lg:w-1/2 text-center lg:text-left border-l-4 border-sapphire pl-6 md:pl-10">
+                    <div class="leading-none mb-3">
+                        <h2 class="font-display text-5xl sm:text-6xl md:text-7xl uppercase text-cream tracking-tight manifesto-text block m-0">
+                            STARTED ON A
+                        </h2>
+                        <h2 class="font-display text-5xl sm:text-6xl md:text-7xl uppercase text-transparent stroke-cream tracking-tight manifesto-text block m-0 mt-1">
+                            RENTED COURT.
+                        </h2>
+                    </div>
+                    <h3 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase text-cream/90 leading-tight mb-8 manifesto-text tracking-wide bg-navy inline-block px-4 py-1.5 mt-2">
                         STILL RUN BY THE PLAYERS.
                     </h3>
-                    <p class="text-sm sm:text-base text-cream/70 max-w-lg mx-auto lg:mx-0 leading-loose manifesto-text font-mono border border-cream/10 p-6 bg-ink/50">
+                    <p class="text-xs sm:text-sm text-cream/70 max-w-lg mx-auto lg:mx-0 leading-relaxed manifesto-text font-mono border border-cream/15 p-5 sm:p-6 bg-navy/30">
                         Born in Da Nang, Beyond the Court is an NGO organizing high-energy, competitive youth sports tournaments across multiple disciplines. We believe in raw competition, community resilience, and giving back. 100% of our proceeds directly fund local charities. Space, velocity, impact.
                     </p>
                 </div>
                 
-                <div class="w-full lg:w-1/2 flex justify-center items-center gap-4 sm:gap-6 pt-12 lg:pt-0">
-                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-20 translate-y-8 md:translate-y-16">
-                        <div class="tilt-inner w-full h-full transform-style-3d tech-border bg-navy img-hover">
+                <div class="w-full lg:w-1/2 flex justify-center items-center gap-5 sm:gap-6 pt-8 lg:pt-0">
+                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-20 translate-y-6 md:translate-y-12">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
                             <img src="assets/SecondStepDay2 - 00000021.jpg" alt="Match Action" class="w-full h-full object-cover mix-blend-screen opacity-80 grayscale">
-                            <div class="absolute bottom-4 left-4 bg-ink/90 border border-sapphire text-cream px-2 py-1 text-[10px]">DIRTY WORK</div>
+                            <div class="absolute bottom-3 left-3 bg-ink/95 border border-sapphire text-cream px-2 py-0.5 text-[9px] font-bold">MATCH_01</div>
                         </div>
                     </div>
-                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-10 -translate-y-8 md:-translate-y-16">
-                        <div class="tilt-inner w-full h-full transform-style-3d tech-border bg-navy img-hover">
+                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-10 -translate-y-6 md:-translate-y-12">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
                             <img src="assets/Copy of SecondStepDay3Morn - 00000037.jpg" alt="Team Huddle" class="w-full h-full object-cover mix-blend-screen opacity-80 grayscale">
-                            <div class="absolute top-4 right-4 bg-sapphire text-cream px-2 py-1 text-[10px] font-bold">UNITY</div>
+                            <div class="absolute top-3 right-3 bg-sapphire text-cream px-2 py-0.5 text-[9px] font-bold">UNITY</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. The Tournament Vault (Tactical Horizontal Grid) -->
+        <!-- 4. The Tournament Vault -->
         <section id="vault" class="vault-section bg-navy text-cream h-screen flex items-center overflow-hidden relative border-y border-cream/20 z-20">
-            <!-- Background Wireframe Grid -->
-            <div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: linear-gradient(#FCF1D0 1px, transparent 1px), linear-gradient(90deg, #FCF1D0 1px, transparent 1px); background-size: 50px 50px;"></div>
-
-            <div class="vault-container flex pl-4 sm:pl-12 md:pl-24 gap-8 sm:gap-12 md:gap-24 items-center w-max h-full no-scrollbar relative z-10">
-                <div class="w-[85vw] sm:w-[50vw] md:w-[35vw] flex-shrink-0 pr-8 md:pr-12">
-                    <div class="border-b-2 border-sapphire pb-4 mb-6">
-                        <h2 class="font-display text-[12vw] sm:text-[10vw] md:text-[8vw] uppercase leading-none text-cream tracking-tight">THE VAULT</h2>
+            <div class="vault-container flex pl-4 sm:pl-12 md:pl-24 gap-8 sm:gap-12 md:gap-20 items-center w-max h-full no-scrollbar relative z-10">
+                <div class="w-[85vw] sm:w-[50vw] md:w-[32vw] flex-shrink-0 pr-6 md:pr-10">
+                    <div class="border-b-2 border-sapphire pb-3 mb-5">
+                        <h2 class="font-display text-[12vw] sm:text-[10vw] md:text-[7vw] uppercase leading-none text-cream tracking-tight">THE VAULT</h2>
                     </div>
-                    <p class="text-sm sm:text-base text-cream/70 max-w-sm uppercase leading-relaxed tracking-widest bg-ink p-4 border border-cream/10">An archive of our past multi-sport collisions. Blood, sweat, and funds raised for the city we call home.</p>
+                    <p class="text-xs sm:text-sm text-cream/70 max-w-sm uppercase leading-relaxed tracking-widest bg-ink p-4 border border-cream/15">An archive of our past multi-sport collisions. Blood, sweat, and funds raised for the city we call home.</p>
                 </div>
                 
-                <div class="tilt-card cursor-interact w-[85vw] sm:w-[60vw] md:w-[45vw] flex-shrink-0 aspect-video relative group perspective-1000">
-                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-border img-hover overflow-hidden">
-                        <div class="absolute inset-0 bg-sapphire/20 mix-blend-multiply z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        <img src="assets/_MG_8946.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Tournament">
-                        
-                        <!-- Tactical UI Overlay -->
-                        <div class="absolute inset-0 z-20 p-6 sm:p-8 flex flex-col justify-between pointer-events-none transform translate-z-12">
-                            <div class="flex justify-between items-start">
-                                <span class="bg-ink border border-cream/30 text-cream text-[10px] px-2 py-1 uppercase tracking-widest">RECORD_01</span>
-                            </div>
+                <!-- Tournament 1 -->
+                <div class="tilt-card cursor-interact w-[85vw] sm:w-[55vw] md:w-[42vw] flex-shrink-0 aspect-video relative group perspective-1000">
+                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-frame img-hover overflow-hidden">
+                        <img src="assets/_MG_8946.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Tournament">
+                        <div class="absolute inset-0 z-20 p-5 sm:p-7 flex flex-col justify-between pointer-events-none transform translate-z-12 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent">
+                            <span class="bg-ink border border-cream/30 text-cream text-[9px] px-2 py-0.5 uppercase tracking-widest w-max">RECORD_01</span>
                             <div>
-                                <h3 class="font-display text-4xl sm:text-5xl md:text-6xl uppercase text-cream tracking-wide mb-4">THE FIRST STEP</h3>
+                                <h3 class="font-display text-3xl sm:text-4xl md:text-5xl uppercase text-cream tracking-wide mb-3">THE FIRST STEP</h3>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="bg-sapphire text-cream text-[10px] sm:text-xs font-bold px-3 py-2 uppercase tracking-widest border border-sapphire">RAISED: 12,000,000 VND</span>
-                                    <span class="bg-ink text-cream border border-cream/50 text-[10px] sm:text-xs font-bold px-3 py-2 uppercase tracking-widest">CHAMPS: TEAM 67</span>
+                                    <span class="bg-sapphire text-cream text-[10px] font-bold px-2.5 py-1 uppercase tracking-widest border border-sapphire">RAISED: 12,000,000 VND</span>
+                                    <span class="bg-ink text-cream border border-cream/40 text-[10px] font-bold px-2.5 py-1 uppercase tracking-widest">CHAMPS: TEAM 67</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tilt-card cursor-interact w-[75vw] sm:w-[45vw] md:w-[30vw] flex-shrink-0 aspect-[4/5] relative group perspective-1000 pr-12 md:pr-24">
-                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-border img-hover overflow-hidden">
-                        <div class="absolute inset-0 bg-sapphire/20 mix-blend-multiply z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        <img src="assets/SecondStepDay3Night - 00000018_2.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Tournament">
-                        
-                        <!-- Tactical UI Overlay -->
-                        <div class="absolute inset-0 z-20 p-6 sm:p-8 flex flex-col justify-between pointer-events-none transform translate-z-12">
-                            <div class="flex justify-between items-start">
-                                <span class="bg-ink border border-cream/30 text-cream text-[10px] px-2 py-1 uppercase tracking-widest">RECORD_02</span>
-                            </div>
+                <!-- Tournament 2 -->
+                <div class="tilt-card cursor-interact w-[75vw] sm:w-[42vw] md:w-[28vw] flex-shrink-0 aspect-[4/5] relative group perspective-1000 pr-10 md:pr-20">
+                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-frame img-hover overflow-hidden">
+                        <img src="assets/SecondStepDay3Night - 00000018_2.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Tournament">
+                        <div class="absolute inset-0 z-20 p-5 sm:p-7 flex flex-col justify-between pointer-events-none transform translate-z-12 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent">
+                            <span class="bg-ink border border-cream/30 text-cream text-[9px] px-2 py-0.5 uppercase tracking-widest w-max">RECORD_02</span>
                             <div>
-                                <h3 class="font-display text-3xl sm:text-4xl md:text-5xl uppercase text-cream tracking-wide mb-4 leading-none">FOOTBALL CHARITY CUP</h3>
-                                <div class="flex flex-col items-start gap-2">
-                                    <span class="bg-sapphire text-cream text-[10px] sm:text-xs font-bold px-3 py-2 uppercase tracking-widest border border-sapphire">RAISED: 40,000,000 VND</span>
-                                    <span class="bg-ink text-cream border border-cream/50 text-[10px] sm:text-xs font-bold px-3 py-2 uppercase tracking-widest">CHAMPS: HOI AN KICKERS</span>
+                                <h3 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase text-cream tracking-wide mb-3 leading-none">FOOTBALL CHARITY CUP</h3>
+                                <div class="flex flex-col items-start gap-1.5">
+                                    <span class="bg-sapphire text-cream text-[10px] font-bold px-2.5 py-1 uppercase tracking-widest border border-sapphire">RAISED: 40,000,000 VND</span>
+                                    <span class="bg-ink text-cream border border-cream/40 text-[10px] font-bold px-2.5 py-1 uppercase tracking-widest">CHAMPS: HOI AN KICKERS</span>
                                 </div>
                             </div>
                         </div>
@@ -220,124 +221,138 @@
             </div>
         </section>
 
-        <!-- 5. Interactive Gallery (Counter-Scrolling Infinite Tracks) -->
+        <!-- 5. In Action (Smooth Moving Infinite Rails + Tilt & Hover) -->
         <section class="py-24 md:py-32 bg-ink relative overflow-hidden z-10 border-b border-cream/10" id="gallery">
-            <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10 mb-16">
-                <div class="flex flex-col md:flex-row justify-between items-end gap-6 border-b-2 border-sapphire pb-6">
+            <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10 mb-14">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-5 border-b-2 border-sapphire pb-5">
                     <h2 class="font-display text-5xl md:text-7xl uppercase text-cream leading-none tracking-tight m-0">IN ACTION</h2>
-                    <p class="text-sm font-mono text-cream/70 uppercase max-w-sm tracking-widest">
+                    <p class="text-xs font-mono text-cream/70 uppercase max-w-sm tracking-widest leading-relaxed">
                         High-intensity youth athletics captured live across courts and pitches. Velocity, grit, and untamed competition.
                     </p>
                 </div>
             </div>
 
-            <!-- Track 1: Scroll Left -->
-            <div class="gallery-track-container w-full overflow-hidden mb-6 flex">
-                <div class="gallery-track flex gap-6 w-max whitespace-nowrap pl-6">
-                    <!-- Images duplicated for infinite effect -->
-                    <div class="w-[60vw] md:w-[30vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/Copy of DSC_0674.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+            <!-- Track 1 (Scrolls Left) -->
+            <div class="gallery-wrapper w-full overflow-hidden mb-6">
+                <div class="gallery-strip flex gap-6 w-max" id="track-left">
+                    <div class="tilt-card cursor-interact w-[65vw] sm:w-[45vw] md:w-[28vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/Copy of DSC_0674.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[40vw] md:w-[20vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/SecondStepDay2 - 00000021.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <div class="tilt-card cursor-interact w-[45vw] sm:w-[32vw] md:w-[20vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/SecondStepDay2 - 00000021.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[60vw] md:w-[35vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/IMG_6254.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <div class="tilt-card cursor-interact w-[65vw] sm:w-[50vw] md:w-[32vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/IMG_6254.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                     <!-- Duplicates -->
-                    <div class="w-[60vw] md:w-[30vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/Copy of DSC_0674.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <!-- Clones for seamless infinite looping -->
+                    <div class="tilt-card cursor-interact w-[65vw] sm:w-[45vw] md:w-[28vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/Copy of DSC_0674.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[40vw] md:w-[20vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/SecondStepDay2 - 00000021.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <div class="tilt-card cursor-interact w-[45vw] sm:w-[32vw] md:w-[20vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/SecondStepDay2 - 00000021.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[60vw] md:w-[35vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/IMG_6254.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <div class="tilt-card cursor-interact w-[65vw] sm:w-[50vw] md:w-[32vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/IMG_6254.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Track 2: Scroll Right -->
-            <div class="gallery-track-container w-full overflow-hidden flex">
-                <div class="gallery-track-reverse flex gap-6 w-max whitespace-nowrap pl-6">
-                    <div class="w-[50vw] md:w-[25vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/IMG_4602.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+            <!-- Track 2 (Scrolls Right) -->
+            <div class="gallery-wrapper w-full overflow-hidden">
+                <div class="gallery-strip flex gap-6 w-max" id="track-right">
+                    <div class="tilt-card cursor-interact w-[55vw] sm:w-[40vw] md:w-[24vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/IMG_4602.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[60vw] md:w-[40vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/DSC_1069.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <div class="tilt-card cursor-interact w-[65vw] sm:w-[48vw] md:w-[34vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/DSC_1069.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[40vw] md:w-[20vw] h-[35vh] flex-shrink-0 tech-border bg-ink flex items-center justify-center cursor-interact overflow-hidden relative group">
-                        <img src="assets/logohead_icemandrey_nobg_2.jpg" class="w-1/2 object-contain mix-blend-screen opacity-50 group-hover:opacity-100 transition-all duration-500" alt="Logo">
+                    <div class="tilt-card cursor-interact w-[45vw] sm:w-[30vw] md:w-[18vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy flex items-center justify-center p-6">
+                            <img src="assets/logohead_icemandrey_nobg_2.jpg" class="w-full object-contain mix-blend-screen opacity-60" alt="Logo">
+                        </div>
                     </div>
-                     <!-- Duplicates -->
-                    <div class="w-[50vw] md:w-[25vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/IMG_4602.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <!-- Clones for seamless infinite looping -->
+                    <div class="tilt-card cursor-interact w-[55vw] sm:w-[40vw] md:w-[24vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/IMG_4602.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[60vw] md:w-[40vw] h-[35vh] flex-shrink-0 tech-border bg-navy img-hover cursor-interact overflow-hidden relative group">
-                        <img src="assets/DSC_1069.jpg" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Action">
+                    <div class="tilt-card cursor-interact w-[65vw] sm:w-[48vw] md:w-[34vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/DSC_1069.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
+                        </div>
                     </div>
-                    <div class="w-[40vw] md:w-[20vw] h-[35vh] flex-shrink-0 tech-border bg-ink flex items-center justify-center cursor-interact overflow-hidden relative group">
-                        <img src="assets/logohead_icemandrey_nobg_2.jpg" class="w-1/2 object-contain mix-blend-screen opacity-50 group-hover:opacity-100 transition-all duration-500" alt="Logo">
+                    <div class="tilt-card cursor-interact w-[45vw] sm:w-[30vw] md:w-[18vw] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy flex items-center justify-center p-6">
+                            <img src="assets/logohead_icemandrey_nobg_2.jpg" class="w-full object-contain mix-blend-screen opacity-60" alt="Logo">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Charity Impact (Tactical Dashboard) -->
+        <!-- 6. Charity Impact -->
         <section class="py-24 md:py-32 px-4 md:px-12 bg-navy z-10 relative overflow-hidden border-b border-cream/20">
-            <!-- Grid Lines -->
-            <div class="absolute inset-0 pointer-events-none z-0 opacity-10">
-                <div class="h-full w-[1px] bg-cream absolute left-1/2 transform -translate-x-1/2"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 md:gap-12 w-full relative z-10">
-                
-                <!-- Stat Block (Left) -->
-                <div class="w-full lg:w-1/2 flex flex-col gap-0 border border-cream/20 bg-ink">
-                    <!-- Stat 1 -->
-                    <div class="w-full p-8 sm:p-12 border-b border-cream/20 relative">
-                        <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="w-2 h-2 bg-sapphire"></span>
-                            <span class="text-[10px] uppercase tracking-widest text-cream/50">DATA_01</span>
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-14 md:gap-12 w-full relative z-10">
+                <!-- Stats Left -->
+                <div class="w-full lg:w-1/2 flex flex-col border border-cream/20 bg-ink">
+                    <div class="w-full p-8 sm:p-10 border-b border-cream/20 relative">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-sapphire inline-block"></span>
+                            <span class="text-[10px] uppercase tracking-widest text-cream/50">METRIC_01</span>
                         </div>
-                        <h4 class="text-sapphire uppercase tracking-widest font-bold text-sm sm:text-base mt-4 mb-2">TOTAL DONATED (VND)</h4>
+                        <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs sm:text-sm mb-1">TOTAL DONATED (VND)</h4>
                         <div class="impact-counter font-display text-5xl sm:text-7xl text-cream tracking-tight" data-target="52000000">0</div>
                     </div>
-                    <!-- Stat 2 & 3 Side by Side -->
                     <div class="w-full flex flex-col sm:flex-row">
-                        <div class="w-full sm:w-1/2 p-8 sm:p-12 border-b sm:border-b-0 sm:border-r border-cream/20 relative">
-                            <div class="absolute top-4 left-4 text-[10px] uppercase tracking-widest text-cream/50">DATA_02</div>
-                            <h4 class="text-sapphire uppercase tracking-widest font-bold text-sm mt-4 mb-2">ATHLETES ENGAGED</h4>
+                        <div class="w-full sm:w-1/2 p-8 sm:p-10 border-b sm:border-b-0 sm:border-r border-cream/20 relative">
+                            <span class="text-[10px] uppercase tracking-widest text-cream/50 block mb-2">METRIC_02</span>
+                            <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs mb-1">ATHLETES ENGAGED</h4>
                             <div class="flex items-baseline">
-                                <div class="impact-counter font-display text-4xl sm:text-6xl text-cream tracking-tight" data-target="120">0</div>
-                                <span class="font-display text-4xl sm:text-6xl text-sapphire ml-2">+</span>
+                                <div class="impact-counter font-display text-4xl sm:text-5xl text-cream tracking-tight" data-target="120">0</div>
+                                <span class="font-display text-4xl sm:text-5xl text-sapphire ml-1.5">+</span>
                             </div>
                         </div>
-                        <div class="w-full sm:w-1/2 p-8 sm:p-12 relative">
-                            <div class="absolute top-4 left-4 text-[10px] uppercase tracking-widest text-cream/50">DATA_03</div>
-                            <h4 class="text-sapphire uppercase tracking-widest font-bold text-sm mt-4 mb-2">TOURNAMENTS HOSTED</h4>
-                            <div class="impact-counter font-display text-4xl sm:text-6xl text-cream tracking-tight" data-target="2">0</div>
+                        <div class="w-full sm:w-1/2 p-8 sm:p-10 relative">
+                            <span class="text-[10px] uppercase tracking-widest text-cream/50 block mb-2">METRIC_03</span>
+                            <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs mb-1">TOURNAMENTS HOSTED</h4>
+                            <div class="impact-counter font-display text-4xl sm:text-5xl text-cream tracking-tight" data-target="2">0</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Rigid Imagery (Right) -->
-                <div class="w-full lg:w-1/2 flex flex-col justify-center h-full gap-6">
-                    <div class="tilt-card cursor-interact w-full h-[30vh] sm:h-[40vh] relative perspective-1000">
-                        <div class="tilt-inner w-full h-full transform-style-3d tech-border bg-ink img-hover">
-                            <img src="assets/DSC_1069.jpg" alt="Impact" class="w-full h-full object-cover grayscale opacity-80 mix-blend-screen">
-                            <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4 text-cream font-mono text-xs tracking-widest bg-navy px-2 py-1 border border-cream/20">TARGET ACHIEVED</div>
+                <!-- Right Images with Sharp Outlines -->
+                <div class="w-full lg:w-1/2 flex flex-col justify-center h-full gap-5">
+                    <div class="tilt-card cursor-interact w-full h-[28vh] sm:h-[36vh] relative perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink img-hover">
+                            <img src="assets/DSC_1069.jpg" alt="Impact" class="w-full h-full object-cover grayscale opacity-75 mix-blend-screen">
+                            <div class="absolute bottom-3 left-3 text-cream font-mono text-[10px] tracking-widest bg-navy px-2 py-0.5 border border-cream/20">CHARITY_OUTREACH</div>
                         </div>
                     </div>
-                    <div class="w-full flex gap-6 h-[20vh] sm:h-[25vh]">
+                    <div class="w-full flex gap-5 h-[18vh] sm:h-[22vh]">
                         <div class="tilt-card cursor-interact w-2/3 h-full perspective-1000">
-                            <div class="tilt-inner w-full h-full transform-style-3d tech-border bg-ink img-hover">
+                            <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink img-hover">
                                 <img src="assets/IMG_4602.jpg" alt="Community" class="w-full h-full object-cover grayscale opacity-60 mix-blend-screen">
                             </div>
                         </div>
                         <div class="tilt-card cursor-interact w-1/3 h-full perspective-1000">
-                            <div class="tilt-inner w-full h-full transform-style-3d tech-border bg-sapphire flex justify-center items-center p-6 hover:bg-cream transition-colors duration-500 group">
+                            <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-sapphire flex justify-center items-center p-4 hover:bg-cream transition-colors duration-500 group">
                                 <img src="assets/logohead_icemandrey_nobg_2.jpg" alt="Dragon Logo" class="object-contain w-full h-full filter invert group-hover:invert-0 transition-all duration-500">
                             </div>
                         </div>
@@ -346,47 +361,45 @@
             </div>
         </section>
 
-        <!-- Secondary Marquee (Rigid Dark Mode) -->
+        <!-- Secondary Marquee -->
         <section class="py-4 bg-ink border-y border-cream/20 overflow-hidden relative z-10">
             <div class="marquee-container flex whitespace-nowrap w-full">
-                <div class="marquee-track-reverse flex text-sapphire font-mono text-xl sm:text-2xl font-bold uppercase tracking-widest">
-                    <div class="px-6 flex items-center">MORE THAN JUST A GAME <span class="mx-6 text-cream/20 font-mono text-xl">X</span> YOUTH ATHLETICS <span class="mx-6 text-cream/20 font-mono text-xl">X</span> DA NANG VIETNAM <span class="mx-6 text-cream/20 font-mono text-xl">X</span></div>
-                    <div class="px-6 flex items-center">MORE THAN JUST A GAME <span class="mx-6 text-cream/20 font-mono text-xl">X</span> YOUTH ATHLETICS <span class="mx-6 text-cream/20 font-mono text-xl">X</span> DA NANG VIETNAM <span class="mx-6 text-cream/20 font-mono text-xl">X</span></div>
-                    <div class="px-6 flex items-center">MORE THAN JUST A GAME <span class="mx-6 text-cream/20 font-mono text-xl">X</span> YOUTH ATHLETICS <span class="mx-6 text-cream/20 font-mono text-xl">X</span> DA NANG VIETNAM <span class="mx-6 text-cream/20 font-mono text-xl">X</span></div>
+                <div class="marquee-track-reverse flex text-sapphire font-mono text-lg sm:text-xl font-bold uppercase tracking-widest">
+                    <div class="px-6 flex items-center">MORE THAN JUST A GAME <span class="mx-6 text-cream/20">X</span> YOUTH ATHLETICS <span class="mx-6 text-cream/20">X</span> DA NANG VIETNAM <span class="mx-6 text-cream/20">X</span></div>
+                    <div class="px-6 flex items-center">MORE THAN JUST A GAME <span class="mx-6 text-cream/20">X</span> YOUTH ATHLETICS <span class="mx-6 text-cream/20">X</span> DA NANG VIETNAM <span class="mx-6 text-cream/20">X</span></div>
+                    <div class="px-6 flex items-center">MORE THAN JUST A GAME <span class="mx-6 text-cream/20">X</span> YOUTH ATHLETICS <span class="mx-6 text-cream/20">X</span> DA NANG VIETNAM <span class="mx-6 text-cream/20">X</span></div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- 7. Brutalist Footer -->
-    <footer class="bg-navy pt-40 pb-16 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
-        <!-- Giant Background Text -->
-        <h2 class="font-display text-[18vw] sm:text-[15vw] leading-none text-cream/5 uppercase tracking-tighter whitespace-nowrap absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-full text-center">
+    <!-- 7. Footer -->
+    <footer class="bg-navy pt-36 pb-14 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
+        <h2 class="font-display text-[17vw] leading-none text-cream/5 uppercase tracking-tighter whitespace-nowrap absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-full text-center">
             BEYOND THE COURT
         </h2>
         
         <div class="relative z-10 flex flex-col items-center w-full">
-            <button class="cursor-interact open-drawer-trigger group relative overflow-hidden px-10 py-6 bg-ink border border-sapphire text-cream font-display text-2xl sm:text-4xl uppercase tracking-widest hover:border-cream transition-colors duration-500 mb-20 flex items-center justify-center rounded-none shadow-[4px_4px_0_0_#22396F] hover:shadow-[8px_8px_0_0_#FCF1D0] transform hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0 active:translate-x-0 active:shadow-none">
-                <span class="relative z-10 transition-colors whitespace-nowrap text-center text-outline text-transparent group-hover:text-ink group-hover:stroke-none" style="-webkit-text-stroke: 1px #FCF1D0;">REACH OUT TO US</span>
+            <button class="cursor-interact open-drawer-trigger group relative overflow-hidden px-8 sm:px-12 py-5 sm:py-6 bg-ink border border-sapphire text-cream font-display text-2xl sm:text-4xl uppercase tracking-widest hover:border-cream transition-colors duration-500 mb-16 flex items-center justify-center rounded-none shadow-[4px_4px_0_0_#22396F] hover:shadow-[8px_8px_0_0_#FCF1D0] transform hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0 active:translate-x-0">
+                <span class="relative z-10 transition-colors stroke-cream text-transparent group-hover:text-ink group-hover:stroke-none">REACH OUT TO US</span>
                 <div class="absolute inset-0 w-full h-full bg-cream transform scale-y-0 origin-bottom transition-transform duration-500 ease-expo group-hover:scale-y-100 group-hover:origin-top"></div>
             </button>
             
-            <div class="w-full max-w-7xl border-t border-cream/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs sm:text-sm tracking-widest uppercase">
-                <div class="flex items-center gap-4">
-                    <span class="w-3 h-3 bg-sapphire inline-block"></span>
+            <div class="w-full max-w-7xl border-t border-cream/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs tracking-widest uppercase">
+                <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 bg-sapphire inline-block"></span>
                     <p>BEYOND THE COURT NGO. DA NANG, VIETNAM.</p>
                 </div>
-                <div class="flex gap-6 sm:gap-8">
-                    <a href="#" class="cursor-interact hover:text-sapphire transition-colors border-b border-transparent hover:border-sapphire pb-1">INSTAGRAM</a>
-                    <a href="#" class="cursor-interact hover:text-sapphire transition-colors border-b border-transparent hover:border-sapphire pb-1">FACEBOOK</a>
-                    <a href="#" class="cursor-interact hover:text-sapphire transition-colors border-b border-transparent hover:border-sapphire pb-1">CONTACT</a>
+                <div class="flex gap-6">
+                    <a href="#" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">INSTAGRAM</a>
+                    <a href="#" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">FACEBOOK</a>
+                    <a href="#" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">CONTACT</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Libraries -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
