@@ -84,7 +84,7 @@ if (!isTouchDevice) {
   }
 }
 
-// 5. Scroll Velocity Marquees
+// 5. Scroll Velocity Top Marquees
 const track1 = document.querySelector('.marquee-track');
 const track2 = document.querySelector('.marquee-track-reverse');
 
@@ -116,8 +116,9 @@ gsap.from(".manifesto-text", {
   scrollTrigger: { trigger: ".mission-section", start: "top 75%" }
 });
 
-// 7. Vault Horizontal Pinning
+// 7. Dynamic Setup After Asset Load (Vault & Moving Galleries)
 window.addEventListener('load', () => {
+  // A. Vault Horizontal Scroll Pin
   const vault = document.querySelector('.vault-container');
   if (vault) {
       gsap.to(vault, {
@@ -132,63 +133,85 @@ window.addEventListener('load', () => {
           }
       });
   }
+
+  // B. Gallery Moving Tracks (Reliable Auto-Scroll with Pause on Hover)
+  const trackLeft = document.getElementById('track-left');
+  const trackRight = document.getElementById('track-right');
+
+  if (trackLeft && trackRight) {
+      // Calculate exact half width for seamless infinite looping
+      const halfWidthLeft = trackLeft.scrollWidth / 2;
+      const loopLeft = gsap.to(trackLeft, {
+          x: -halfWidthLeft,
+          duration: 30,
+          ease: "none",
+          repeat: -1,
+          modifiers: {
+              x: gsap.utils.unitize(x => parseFloat(x) % halfWidthLeft)
+          }
+      });
+
+      const halfWidthRight = trackRight.scrollWidth / 2;
+      gsap.set(trackRight, { x: -halfWidthRight });
+      const loopRight = gsap.to(trackRight, {
+          x: 0,
+          duration: 32,
+          ease: "none",
+          repeat: -1,
+          modifiers: {
+              x: gsap.utils.unitize(x => {
+                  let val = parseFloat(x);
+                  return val > 0 ? (val % halfWidthRight) - halfWidthRight : val;
+              })
+          }
+      });
+
+      // Pause tracks when cursor enters the gallery container
+      const gallerySection = document.getElementById('gallery');
+      if (gallerySection) {
+          gallerySection.addEventListener('mouseenter', () => {
+              loopLeft.pause();
+              loopRight.pause();
+          });
+          gallerySection.addEventListener('mouseleave', () => {
+              loopLeft.play();
+              loopRight.play();
+          });
+      }
+  }
+
+  // C. Footer Background Text (Moving Forward / Left to Right)
+  const footerTrack = document.querySelector('.footer-marquee-track');
+  if (footerTrack) {
+      gsap.fromTo(footerTrack, 
+          { xPercent: -50 }, 
+          { xPercent: 0, duration: 40, ease: "none", repeat: -1 }
+      );
+  }
+
   ScrollTrigger.refresh();
 });
 
-// 8. "In Action" Continuous Moving Tracks via GSAP (Infinite Seamless Loop)
-const trackLeft = document.getElementById('track-left');
-const trackRight = document.getElementById('track-right');
-
-if (trackLeft && trackRight) {
-  // Move Left Loop
-  const loopLeft = gsap.to(trackLeft, {
-      xPercent: -50,
-      ease: "none",
-      duration: 25,
-      repeat: -1
-  });
-
-  // Move Right Loop
-  const loopRight = gsap.fromTo(trackRight, 
-      { xPercent: -50 }, 
-      { xPercent: 0, ease: "none", duration: 28, repeat: -1 }
-  );
-
-  // Pause on hover
-  [trackLeft, trackRight].forEach(track => {
-      track.addEventListener('mouseenter', () => {
-          loopLeft.pause();
-          loopRight.pause();
-      });
-      track.addEventListener('mouseleave', () => {
-          loopLeft.play();
-          loopRight.play();
-      });
-  });
-}
-
-// 9. Kinetic Pan & 3D Tilt for all Cards (Including Gallery)
+// 8. Kinetic Pan & 3D Tilt for all Cards
 if (!isTouchDevice) {
-  // Inner image pan
   document.querySelectorAll('.img-hover').forEach(container => {
       const img = container.querySelector('img');
       if (!img) return;
 
       container.addEventListener('mouseenter', () => {
-          gsap.to(img, { scale: 1.15, duration: 0.6, ease: "power2.out", filter: "grayscale(0%)", opacity: 1 });
+          gsap.to(img, { scale: 1.12, duration: 0.6, ease: "power2.out", filter: "grayscale(0%)", opacity: 1 });
       });
       container.addEventListener('mousemove', (e) => {
           const rect = container.getBoundingClientRect();
           const x = (e.clientX - rect.left) / rect.width - 0.5;
           const y = (e.clientY - rect.top) / rect.height - 0.5;
-          gsap.to(img, { x: x * 20, y: y * 20, duration: 0.4, ease: "power1.out" });
+          gsap.to(img, { x: x * 18, y: y * 18, duration: 0.35, ease: "power1.out" });
       });
       container.addEventListener('mouseleave', () => {
           gsap.to(img, { scale: 1, x: 0, y: 0, duration: 0.6, ease: "power2.out", filter: "grayscale(100%)", opacity: 0.7 });
       });
   });
 
-  // Outer 3D tilt
   document.querySelectorAll('.tilt-card').forEach(card => {
       const inner = card.querySelector('.tilt-inner');
       if (!inner) return;
@@ -197,15 +220,15 @@ if (!isTouchDevice) {
           const rect = card.getBoundingClientRect();
           const x = (e.clientX - rect.left) / rect.width - 0.5;
           const y = (e.clientY - rect.top) / rect.height - 0.5;
-          gsap.to(inner, { rotateX: -y * 12, rotateY: x * 12, duration: 0.4, ease: "power1.out" });
+          gsap.to(inner, { rotateX: -y * 10, rotateY: x * 10, duration: 0.35, ease: "power1.out" });
       });
       card.addEventListener('mouseleave', () => {
-          gsap.to(inner, { rotateX: 0, rotateY: 0, duration: 0.6, ease: "power2.out" });
+          gsap.to(inner, { rotateX: 0, rotateY: 0, duration: 0.5, ease: "power2.out" });
       });
   });
 }
 
-// 10. Impact Counters
+// 9. Impact Counters
 document.querySelectorAll('.impact-counter').forEach(counter => {
   let target = parseInt(counter.getAttribute('data-target'), 10);
   let obj = { val: 0 };
