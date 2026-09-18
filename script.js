@@ -186,30 +186,18 @@ window.addEventListener('load', () => {
 });
 
 // 8. Kinetic Pan & 3D Tilt
-// High-Responsiveness 3D Interactive Card Tracking
-document.querySelectorAll('.tilt-card').forEach((card) => {
-  const inner = card.querySelector('.tilt-inner') || card;
-
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    // Snappy multiplier
-    const rotateX = ((y - centerY) / centerY) * -12;
-    const rotateY = ((x - centerX) / centerX) * 12;
-
-    // Instant direct transform without conflicting transitions
-    inner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.06, 1.06, 1.06)`;
-  });
-
-  card.addEventListener('mouseleave', () => {
-    inner.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-  });
-});
+if (!isTouchDevice) {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+          const inner = card.querySelector('.tilt-inner');
+          card.addEventListener('mousemove', (e) => {
+              const rect = card.getBoundingClientRect();
+              const rotateX = (((e.clientY - rect.top) - rect.height/2) / (rect.height/2)) * -12;
+              const rotateY = (((e.clientX - rect.left) - rect.width/2) / (rect.width/2)) * 12;
+              gsap.to(inner, { rotateX, rotateY, duration: 0.5, ease: 'power2.out' });
+          });
+          card.addEventListener('mouseleave', () => gsap.to(inner, { rotateX: 0, rotateY: 0, duration: 0.7 }));
+      });
+  }
 
 // 9. Impact Counters
 document.querySelectorAll('.impact-counter').forEach(counter => {
