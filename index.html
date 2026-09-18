@@ -16,7 +16,13 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { cream: '#FCF1D0', navy: '#0D1C42', ink: '#010736', sapphire: '#22396F' },
+                    colors: { 
+                        cream: '#FCF1D0', 
+                        navy: '#0D1C42', 
+                        ink: '#010736', 
+                        sapphire: '#22396F',
+                        iceblue: '#6C8CD5'
+                    },
                     fontFamily: { display: ['Anton', 'sans-serif'], mono: ['Space Mono', 'monospace'] },
                     aspectRatio: { 'portrait': '3 / 4', 'tall': '9 / 16' },
                     transitionTimingFunction: { 'expo': 'cubic-bezier(0.16, 1, 0.3, 1)' }
@@ -52,30 +58,38 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
-        <div class="mb-10 text-cream/70 text-xs sm:text-sm font-light leading-relaxed border-l-2 border-sapphire pl-4">
+        <div class="mb-10 text-cream/80 text-xs sm:text-sm font-light leading-relaxed border-l-2 border-sapphire pl-4">
             Whether you want to sponsor a tournament, volunteer, or integrate your brand into our athletic network in Da Nang, we want to hear from you.
         </div>
-        <form class="flex flex-col gap-7">
-            <div class="relative">
-                <input type="text" id="name" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3 text-cream placeholder-transparent focus:outline-none focus:border-sapphire transition-colors rounded-none" placeholder="Name">
-                <label for="name" class="absolute left-4 top-3 text-cream/50 text-xs transition-all peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Full Name</label>
+        <form class="flex flex-col gap-9">
+            <!-- Full Name Field -->
+            <div class="relative pt-4">
+                <input type="text" id="name" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors rounded-none" placeholder="Full Name">
+                <label for="name" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">
+                    FULL NAME
+                </label>
             </div>
-            <div class="relative">
-                <input type="email" id="email" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3 text-cream placeholder-transparent focus:outline-none focus:border-sapphire transition-colors rounded-none" placeholder="Email">
-                <label for="email" class="absolute left-4 top-3 text-cream/50 text-xs transition-all peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Email Address</label>
+            <!-- Email Address Field -->
+            <div class="relative pt-4">
+                <input type="email" id="email" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors rounded-none" placeholder="Email Address">
+                <label for="email" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">
+                    EMAIL ADDRESS
+                </label>
             </div>
-            <div class="relative">
-                <textarea id="message" rows="4" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3 text-cream placeholder-transparent focus:outline-none focus:border-sapphire transition-colors resize-none rounded-none" placeholder="Message"></textarea>
-                <label for="message" class="absolute left-4 top-3 text-cream/50 text-xs transition-all peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sapphire uppercase tracking-widest bg-navy px-1">Inquiry</label>
+            <!-- Inquiry Field -->
+            <div class="relative pt-4">
+                <textarea id="message" rows="4" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors resize-none rounded-none" placeholder="Inquiry"></textarea>
+                <label for="message" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">
+                    INQUIRY
+                </label>
             </div>
             <button type="button" class="cursor-interact mt-2 bg-sapphire text-cream py-4 font-bold tracking-widest uppercase hover:bg-cream hover:text-ink transition-colors duration-300 border border-sapphire hover:border-cream rounded-none">Submit Request</button>
         </form>
     </aside>
 
     <main>
-        <!-- 1. Hero Section (Adjusted Spacing, Clearly Rendered Text) -->
+        <!-- 1. Hero Section -->
         <section class="relative min-h-[92vh] pt-44 md:pt-52 pb-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden bg-ink" id="hero">
-            <!-- Tactical Guide Grid Lines -->
             <div class="absolute inset-0 pointer-events-none z-0 opacity-15">
                 <div class="h-full w-[1px] bg-cream absolute left-[8%]"></div>
                 <div class="h-full w-[1px] bg-cream absolute right-[8%]"></div>
@@ -108,16 +122,14 @@
                 </div>
             </div>
 
-            <!-- Parallax Floating Images with Proportional Spacing -->
+            <!-- Parallax Floating Images -->
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" id="hero-parallax-container">
-                <!-- Top Image: Lowered to top-[22%] to guarantee comfortable clearance from top bar -->
                 <div class="parallax-img absolute top-[22%] right-[5%] w-[32vw] md:w-[17vw] aspect-portrait overflow-hidden opacity-0 tech-frame bg-navy">
                     <div class="img-hover w-full h-full">
                         <img src="assets/IMG_6254.jpg" alt="Athletes" class="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto">
                     </div>
                     <div class="absolute top-2 left-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30">CAM_01</div>
                 </div>
-                <!-- Bottom Image -->
                 <div class="parallax-img absolute bottom-[8%] right-[18%] md:right-[22%] w-[42vw] md:w-[23vw] aspect-video overflow-hidden opacity-0 tech-frame bg-navy">
                     <div class="img-hover w-full h-full">
                         <img src="assets/Copy of DSC_0674.jpg" alt="Action Shot" class="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto">
@@ -138,7 +150,7 @@
             </div>
         </section>
 
-        <!-- 3. Culture & Mission Manifesto (Full Text Visible, Sharp Frames) -->
+        <!-- 3. Culture & Mission Manifesto -->
         <section class="relative py-24 md:py-32 px-4 md:px-12 min-h-screen flex items-center mission-section overflow-hidden z-0 bg-ink">
             <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-14 lg:gap-12 items-center justify-between relative z-10">
                 <div class="w-full lg:w-1/2 text-center lg:text-left border-l-4 border-sapphire pl-6 md:pl-10">
@@ -221,7 +233,7 @@
             </div>
         </section>
 
-        <!-- 5. In Action (Smooth Moving Infinite Rails + Tilt & Hover) -->
+        <!-- 5. In Action (Smooth-Scrolling Infinite Tracks) -->
         <section class="py-24 md:py-32 bg-ink relative overflow-hidden z-10 border-b border-cream/10" id="gallery">
             <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10 mb-14">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-5 border-b-2 border-sapphire pb-5">
@@ -233,8 +245,8 @@
             </div>
 
             <!-- Track 1 (Scrolls Left) -->
-            <div class="gallery-wrapper w-full overflow-hidden mb-6">
-                <div class="gallery-strip flex gap-6 w-max" id="track-left">
+            <div class="gallery-viewport w-full overflow-hidden mb-6 relative">
+                <div class="gallery-rail flex gap-6 w-max" id="track-left">
                     <div class="tilt-card cursor-interact w-[65vw] sm:w-[45vw] md:w-[28vw] h-[34vh] flex-shrink-0 perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
                             <img src="assets/Copy of DSC_0674.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
@@ -250,7 +262,7 @@
                             <img src="assets/IMG_6254.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
                         </div>
                     </div>
-                    <!-- Clones for seamless infinite looping -->
+                    <!-- Seamless Duplicates -->
                     <div class="tilt-card cursor-interact w-[65vw] sm:w-[45vw] md:w-[28vw] h-[34vh] flex-shrink-0 perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
                             <img src="assets/Copy of DSC_0674.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
@@ -270,8 +282,8 @@
             </div>
 
             <!-- Track 2 (Scrolls Right) -->
-            <div class="gallery-wrapper w-full overflow-hidden">
-                <div class="gallery-strip flex gap-6 w-max" id="track-right">
+            <div class="gallery-viewport w-full overflow-hidden relative">
+                <div class="gallery-rail flex gap-6 w-max" id="track-right">
                     <div class="tilt-card cursor-interact w-[55vw] sm:w-[40vw] md:w-[24vw] h-[34vh] flex-shrink-0 perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
                             <img src="assets/IMG_4602.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
@@ -287,7 +299,7 @@
                             <img src="assets/logohead_icemandrey_nobg_2.jpg" class="w-full object-contain mix-blend-screen opacity-60" alt="Logo">
                         </div>
                     </div>
-                    <!-- Clones for seamless infinite looping -->
+                    <!-- Seamless Duplicates -->
                     <div class="tilt-card cursor-interact w-[55vw] sm:w-[40vw] md:w-[24vw] h-[34vh] flex-shrink-0 perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
                             <img src="assets/IMG_4602.jpg" class="w-full h-full object-cover grayscale opacity-70" alt="Action">
@@ -310,7 +322,6 @@
         <!-- 6. Charity Impact -->
         <section class="py-24 md:py-32 px-4 md:px-12 bg-navy z-10 relative overflow-hidden border-b border-cream/20">
             <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-14 md:gap-12 w-full relative z-10">
-                <!-- Stats Left -->
                 <div class="w-full lg:w-1/2 flex flex-col border border-cream/20 bg-ink">
                     <div class="w-full p-8 sm:p-10 border-b border-cream/20 relative">
                         <div class="flex items-center gap-2 mb-2">
@@ -337,7 +348,6 @@
                     </div>
                 </div>
 
-                <!-- Right Images with Sharp Outlines -->
                 <div class="w-full lg:w-1/2 flex flex-col justify-center h-full gap-5">
                     <div class="tilt-card cursor-interact w-full h-[28vh] sm:h-[36vh] relative perspective-1000">
                         <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink img-hover">
@@ -373,11 +383,16 @@
         </section>
     </main>
 
-    <!-- 7. Footer -->
+    <!-- 7. Footer with Moving, Spaced-Out Background Marquee -->
     <footer class="bg-navy pt-36 pb-14 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
-        <h2 class="font-display text-[17vw] leading-none text-cream/5 uppercase tracking-tighter whitespace-nowrap absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-full text-center">
-            BEYOND THE COURT
-        </h2>
+        <!-- Animated Background Watermark Marquee (Moving Forward / Left-to-Right) -->
+        <div class="footer-bg-marquee absolute top-1/2 left-0 w-full transform -translate-y-1/2 pointer-events-none select-none z-0 overflow-hidden opacity-[0.06]">
+            <div class="footer-marquee-track flex whitespace-nowrap font-display text-[16vw] uppercase leading-none tracking-[0.25em] text-cream">
+                <span class="mr-24">B E Y O N D &nbsp; T H E &nbsp; C O U R T</span>
+                <span class="mr-24">B E Y O N D &nbsp; T H E &nbsp; C O U R T</span>
+                <span class="mr-24">B E Y O N D &nbsp; T H E &nbsp; C O U R T</span>
+            </div>
+        </div>
         
         <div class="relative z-10 flex flex-col items-center w-full">
             <button class="cursor-interact open-drawer-trigger group relative overflow-hidden px-8 sm:px-12 py-5 sm:py-6 bg-ink border border-sapphire text-cream font-display text-2xl sm:text-4xl uppercase tracking-widest hover:border-cream transition-colors duration-500 mb-16 flex items-center justify-center rounded-none shadow-[4px_4px_0_0_#22396F] hover:shadow-[8px_8px_0_0_#FCF1D0] transform hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0 active:translate-x-0">
