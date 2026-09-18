@@ -99,6 +99,8 @@ img,
 .tactical-ambient-svg {
   animation: tacticalPan 40s linear infinite alternate;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 @keyframes tacticalPan {
   0% { transform: translate(-48%, -48%) scale(1.05); }
@@ -157,6 +159,8 @@ img,
   transform: translate(-50%, -50%);
   transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
               height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, width, height;
+  backface-visibility: hidden;
 }
 
 #custom-cursor.hover-glow {
