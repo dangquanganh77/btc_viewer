@@ -1,14 +1,16 @@
 // 1. Initialize Lenis (Smooth Scroll)
 const lenis = new Lenis({
   duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
   direction: 'vertical',
   gestureDirection: 'vertical',
-  smooth: true,
-  mouseMultiplier: 1,
+  wheelMultiplier: 1,
   touchMultiplier: 2,
 });
 
+// Single driver loop: GSAP's ticker drives Lenis, Lenis drives ScrollTrigger.
+// (Do NOT also run a standalone requestAnimationFrame loop here — running both
+// double-drives lenis.raf() every frame and was the cause of the scroll lag.)
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
@@ -127,7 +129,7 @@ window.addEventListener('load', () => {
       });
   }
 
-  // B. Gallery Moving Tracks
+  // B. Gallery Moving Tracks (0.4s Deceleration strictly bounded to card hover)
   const trackLeft = document.getElementById('track-left');
   const trackRight = document.getElementById('track-right');
 
@@ -179,7 +181,7 @@ window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
 
-// 8. Kinetic Pan & 3D Tilt
+// 8. Kinetic Pan & 3D Tilt (No Opacity or Filter Dimming)
 if (!isTouchDevice) {
   document.querySelectorAll('.img-hover').forEach(container => {
       const img = container.querySelector('img');
