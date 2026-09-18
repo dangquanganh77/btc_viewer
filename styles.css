@@ -91,21 +91,24 @@ img,
   pointer-events: none; /* Passes mouse coordinates smoothly to card */
 }
 
-/* 3D Tilt Component */
+/* 3D Tilt Card Base & Border Bleed Fix */
 .perspective-1000 {
   perspective: 1000px;
 }
-
 .transform-style-3d {
   transform-style: preserve-3d;
 }
 
 .tilt-inner {
+  border-radius: 1rem;
+  overflow: hidden;
   position: relative;
-  border-radius: 0px !important;
-  will-change: transform;
-  /* Fast reaction time without lag */
-  transition: transform 0.08s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.tilt-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Architectural Graph Paper */
