@@ -40,9 +40,7 @@ a, button, input, textarea, select {
   position: relative;
 }
 
-/* 
-   Sub-Pixel Hairline Architectural Graph Paper 
-*/
+/* Sub-Pixel Hairline Architectural Graph Paper */
 .paper-tactile-texture {
   position: absolute;
   inset: 0;
@@ -55,6 +53,7 @@ a, button, input, textarea, select {
 }
 
 /* --- AMBIENT TACTICAL PLAYBOOK ANIMATIONS --- */
+/* Note: Explicit Opacities are now set per element type for hierarchy */
 
 .tactical-ambient-svg {
   animation: tacticalPan 40s linear infinite alternate;
@@ -65,10 +64,11 @@ a, button, input, textarea, select {
   100% { transform: translate(-52%, -52%) scale(1.05); }
 }
 
-/* Continuous Drawing Effect */
+/* Continuous Drawing Effect (Court Base Lines) */
 .tactical-path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
+  opacity: 0.09; /* Subtle baseline visibility */
   animation: tacticalDraw 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
 }
 @keyframes tacticalDraw {
@@ -78,6 +78,7 @@ a, button, input, textarea, select {
 
 /* Spinning Center Mark */
 .tactical-spin {
+  opacity: 0.09;
   animation: tacticalRotate 90s linear infinite;
 }
 @keyframes tacticalRotate {
@@ -85,8 +86,9 @@ a, button, input, textarea, select {
   100% { transform: rotate(360deg); }
 }
 
-/* Marching Arrows (Moving along path) */
+/* Marching Arrows (More Visible Plays) */
 .tactical-arrow {
+  opacity: 0.20; /* Distinctly brighter than court lines */
   animation: tacticalMarch 2.5s linear infinite;
 }
 @keyframes tacticalMarch {
@@ -94,13 +96,13 @@ a, button, input, textarea, select {
   100% { stroke-dashoffset: 0; }
 }
 
-/* Pulsing X Markers */
+/* Pulsing X Markers & Arrowheads (Brightest elements) */
 .tactical-pulse {
   animation: pulseMarker 3.5s ease-in-out infinite alternate;
 }
 @keyframes pulseMarker {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.28; } /* Peaks brightly, but safely beneath full 100% legibility threshold */
 }
 
 /* Lenis */
