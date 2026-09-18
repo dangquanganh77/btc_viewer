@@ -2,8 +2,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #010736; /* Ink */
-  color: #FCF1D0; /* Cream */
+  background-color: #010736;
+  color: #FCF1D0;
   cursor: none !important; 
   overflow-x: hidden;
 }
@@ -17,7 +17,7 @@ a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* Bulletproof Stroke Typography: Guarantees full visibility across all engines */
+/* Bulletproof Stroke Typography */
 .stroke-cream {
   -webkit-text-stroke: 1.5px #FCF1D0;
   text-stroke: 1.5px #FCF1D0;
