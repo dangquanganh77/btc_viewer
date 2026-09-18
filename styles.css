@@ -42,7 +42,7 @@ a, button, input, textarea, select {
 
 /* 
    Authentic Engineering Grid Paper Background 
-   Deep blue ground with crisp, thin cream-white quad lines and intersection crosshairs (+)
+   Ultra-thin opacity lines, no intersection dots/marks, pure quad squares.
 */
 .paper-tactile-texture {
   position: absolute;
@@ -51,25 +51,18 @@ a, button, input, textarea, select {
   z-index: 0;
   background-color: transparent;
   background-image:
-    /* 1. Crosshair Intersection Plus (+) Marks (100px grid) */
-    linear-gradient(to right, transparent calc(50% - 4px), rgba(252, 241, 208, 0.45) calc(50% - 4px), rgba(252, 241, 208, 0.45) calc(50% + 4px), transparent calc(50% + 4px)),
-    linear-gradient(to bottom, transparent calc(50% - 4px), rgba(252, 241, 208, 0.45) calc(50% - 4px), rgba(252, 241, 208, 0.45) calc(50% + 4px), transparent calc(50% + 4px)),
-    /* 2. Major Grid Lines (100px grid) */
-    linear-gradient(to right, rgba(252, 241, 208, 0.22) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(252, 241, 208, 0.22) 1px, transparent 1px),
-    /* 3. Minor Sub-Grid Subdivision Lines (20px grid) */
+    /* 1. Major Grid Lines (100px grid) - very subtle */
     linear-gradient(to right, rgba(252, 241, 208, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(252, 241, 208, 0.08) 1px, transparent 1px);
+    linear-gradient(to bottom, rgba(252, 241, 208, 0.08) 1px, transparent 1px),
+    /* 2. Minor Sub-Grid Subdivision Lines (20px grid) - barely visible hairline */
+    linear-gradient(to right, rgba(252, 241, 208, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(252, 241, 208, 0.03) 1px, transparent 1px);
   background-size:
-    100px 100px,
-    100px 100px,
     100px 100px,
     100px 100px,
     20px 20px,
     20px 20px;
   background-position:
-    -50px -50px,
-    -50px -50px,
     0 0,
     0 0,
     0 0,
