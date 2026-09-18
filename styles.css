@@ -17,7 +17,7 @@ a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* Bulletproof Stroke Typography */
+/* Typography Stroke */
 .stroke-cream {
   -webkit-text-stroke: 1.5px #FCF1D0;
   text-stroke: 1.5px #FCF1D0;
@@ -32,15 +32,42 @@ a, button, input, textarea, select {
   }
 }
 
-/* Rigid Sharp Frame */
+/* Rigid Architectural Frame */
 .tech-frame {
-  border: 1px solid rgba(252, 241, 208, 0.45) !important;
+  border: 1px solid rgba(252, 241, 208, 0.4) !important;
   border-radius: 0px !important;
   box-shadow: inset 0 0 0 1px rgba(1, 7, 54, 0.6);
   position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Sub-Pixel Hairline Architectural Graph Paper */
+.tech-frame:hover {
+  border-color: rgba(252, 241, 208, 0.85) !important;
+}
+
+/* Gallery Adaptive Aspect Cards */
+.gallery-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.gallery-card img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Graph Paper Texture */
 .paper-tactile-texture {
   position: absolute;
   inset: 0;
@@ -52,8 +79,7 @@ a, button, input, textarea, select {
   background-size: 80px 80px;
 }
 
-/* --- AMBIENT TACTICAL PLAYBOOK ANIMATIONS --- */
-
+/* Tactical Playbook Animations */
 .tactical-ambient-svg {
   animation: tacticalPan 40s linear infinite alternate;
   will-change: transform;
@@ -63,11 +89,10 @@ a, button, input, textarea, select {
   100% { transform: translate(-52%, -52%) scale(1.05); }
 }
 
-/* Continuous Drawing Effect (Court Base Lines - Softened for foreground text legibility) */
 .tactical-path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  opacity: 0.035; /* Dropped to a soft, non-intrusive watermark */
+  opacity: 0.035;
   animation: tacticalDraw 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
 }
 @keyframes tacticalDraw {
@@ -75,7 +100,6 @@ a, button, input, textarea, select {
   100% { stroke-dashoffset: 0; }
 }
 
-/* Spinning Center Mark */
 .tactical-spin {
   opacity: 0.035;
   animation: tacticalRotate 90s linear infinite;
@@ -85,9 +109,8 @@ a, button, input, textarea, select {
   100% { transform: rotate(360deg); }
 }
 
-/* Marching Arrows */
 .tactical-arrow {
-  opacity: 0.075; /* Visible tactility without blinding the text outline */
+  opacity: 0.075;
   animation: tacticalMarch 2.5s linear infinite;
 }
 @keyframes tacticalMarch {
@@ -95,27 +118,15 @@ a, button, input, textarea, select {
   100% { stroke-dashoffset: 0; }
 }
 
-/* Pulsing X Markers & Arrowheads */
 .tactical-pulse {
   animation: pulseMarker 3.5s ease-in-out infinite alternate;
 }
 @keyframes pulseMarker {
   0%, 100% { opacity: 0.04; }
-  50% { opacity: 0.11; } /* Gentle pulse peak that never overpowers headline text */
+  50% { opacity: 0.11; }
 }
 
-/* Lenis */
-html.lenis, html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-/* Tactical Crosshair Cursor */
+/* Custom Tactical Cursor */
 #custom-cursor {
   position: fixed;
   top: 0;
@@ -157,6 +168,7 @@ html.lenis, html.lenis body {
   height: 100%;
   object-fit: cover;
   will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Drawer Backdrop */
