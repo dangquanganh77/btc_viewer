@@ -17,7 +17,7 @@ a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* Absolute Grayscale Killer (Overrides Script Injections) */
+/* Absolute Grayscale Killer (Overrides JS Injections) */
 img, 
 .tilt-inner img, 
 .gallery-card img, 
@@ -47,15 +47,10 @@ img,
   border-radius: 0px !important;
   box-shadow: inset 0 0 0 1px rgba(1, 7, 54, 0.6);
   position: relative;
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.tech-frame:hover {
-  border-color: rgba(252, 241, 208, 0.9) !important;
-  box-shadow: inset 0 0 0 1px rgba(1, 7, 54, 0.9), 0 0 16px rgba(108, 140, 213, 0.25);
-}
-
-/* Gallery Hover Pause & Card Layout */
+/* Gallery Hover Pause & Base Setup */
 .gallery-viewport:hover .gallery-rail {
   animation-play-state: paused !important;
 }
@@ -67,20 +62,13 @@ img,
   height: 100%;
   width: auto;
   flex-shrink: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  z-index: 10;
+  transition: z-index 0s 0.2s; /* delays z-index reset slightly */
 }
 
 .gallery-card:hover {
-  transform: translateY(-4px) scale(1.015);
-  z-index: 20;
-}
-
-.gallery-card img {
-  height: 100%;
-  width: auto;
-  max-width: none;
-  object-fit: contain;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 50;
+  transition: z-index 0s;
 }
 
 /* Architectural Graph Paper */
@@ -95,11 +83,11 @@ img,
   background-size: 80px 80px;
 }
 
-/* Ambient Tactical Playbook Vector Animations */
+/* Ambient Tactical Playbook Animations */
 .tactical-ambient-svg {
   animation: tacticalPan 40s linear infinite alternate;
   will-change: transform;
-  transform: translateZ(0);
+  transform: translateZ(0); /* Hardware Acceleration */
   backface-visibility: hidden;
 }
 @keyframes tacticalPan {
@@ -144,7 +132,7 @@ img,
   50% { opacity: 0.11; }
 }
 
-/* Tactical Cursor */
+/* Custom Tactical Cursor */
 #custom-cursor {
   position: fixed;
   top: 0;
@@ -160,7 +148,6 @@ img,
   transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
               height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, width, height;
-  backface-visibility: hidden;
 }
 
 #custom-cursor.hover-glow {
@@ -171,22 +158,17 @@ img,
   clip-path: polygon(0 15%, 15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%);
 }
 
-/* 3D Tilt Card Base */
+/* 3D Tilt Card Component */
 .perspective-1000 {
-  perspective: 1000px;
+  perspective: 1200px;
 }
 .transform-style-3d {
   transform-style: preserve-3d;
 }
 .tilt-inner {
-  overflow: hidden;
   position: relative;
   border-radius: 0px !important;
-}
-.tilt-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* Removed overflow: hidden here so bounding box scales naturally without clipping inner image */
   will-change: transform;
 }
 
