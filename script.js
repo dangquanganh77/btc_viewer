@@ -28,8 +28,8 @@ const interactables = document.querySelectorAll('.cursor-interact');
 const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
 if (!isTouchDevice) {
-  const xTo = gsap.quickTo(cursor, "x", {duration: 0.2, ease: "power3"});
-  const yTo = gsap.quickTo(cursor, "y", {duration: 0.2, ease: "power3"});
+  const xTo = gsap.quickTo(cursor, "x", {duration: 0.1, ease: "power3"});
+  const yTo = gsap.quickTo(cursor, "y", {duration: 0.1, ease: "power3"});
 
   window.addEventListener('mousemove', (e) => {
       xTo(e.clientX);
@@ -38,11 +38,9 @@ if (!isTouchDevice) {
 
   interactables.forEach(el => {
       el.addEventListener('mouseenter', () => {
-          gsap.to(cursor, { scale: 2, duration: 0.3, ease: "power2.out" });
           cursor.classList.add('hover-glow'); 
       });
       el.addEventListener('mouseleave', () => {
-          gsap.to(cursor, { scale: 1, duration: 0.3, ease: "power2.out" });
           cursor.classList.remove('hover-glow');
       });
   });
@@ -99,15 +97,15 @@ if (!isTouchDevice) {
   }
 }
 
-// 5. Scroll Velocity Marquees (Interactive Speeds)
+// 5. Scroll Velocity Marquees (Speeds up on scroll)
 const track1 = document.querySelector('.marquee-track');
 const track2 = document.querySelector('.marquee-track-reverse');
 
 if (track1) {
-  let marqueeTween1 = gsap.to(track1, { xPercent: -50, ease: "none", duration: 25, repeat: -1 });
+  let marqueeTween1 = gsap.to(track1, { xPercent: -50, ease: "none", duration: 20, repeat: -1 });
   ScrollTrigger.create({
       onUpdate: (self) => {
-          let velocity = Math.abs(self.getVelocity()) / 150;
+          let velocity = Math.abs(self.getVelocity()) / 100;
           let scale = 1 + velocity;
           scale = gsap.utils.clamp(1, 8, scale);
           gsap.to(marqueeTween1, { timeScale: scale, duration: 0.2, overwrite: true });
@@ -117,11 +115,10 @@ if (track1) {
 }
 
 if (track2) {
-  // Starts offset and moves in reverse
-  let marqueeTween2 = gsap.fromTo(track2, { xPercent: -50 }, { xPercent: 0, ease: "none", duration: 30, repeat: -1 });
+  let marqueeTween2 = gsap.fromTo(track2, { xPercent: -50 }, { xPercent: 0, ease: "none", duration: 25, repeat: -1 });
   ScrollTrigger.create({
       onUpdate: (self) => {
-          let velocity = Math.abs(self.getVelocity()) / 150;
+          let velocity = Math.abs(self.getVelocity()) / 100;
           let scale = 1 + velocity;
           scale = gsap.utils.clamp(1, 8, scale);
           gsap.to(marqueeTween2, { timeScale: scale, duration: 0.2, overwrite: true });
@@ -130,25 +127,13 @@ if (track2) {
   });
 }
 
-// 6. Self-Drawing Pitch SVG
-const paths = gsap.utils.toArray('.draw-path');
-paths.forEach(path => {
-  const length = path.getTotalLength();
-  gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
-  gsap.to(path, {
-      strokeDashoffset: 0, ease: "none",
-      scrollTrigger: { trigger: ".mission-section", start: "top 70%", end: "bottom 30%", scrub: 1.5 }
-  });
-});
-
 gsap.from(".manifesto-text", {
   y: 30, opacity: 0, duration: 1, stagger: 0.15, ease: "power3.out",
   scrollTrigger: { trigger: ".mission-section", start: "top 70%" }
 });
 
-// Wait until images load before calculating layout for the Vault Pin
+// 6. Vault Horizontal Scroll Pin
 window.addEventListener('load', () => {
-  // 7. Vault Horizontal Scroll Pin
   const vaultContainer = document.querySelector('.vault-container');
   if (vaultContainer) {
       const getScrollAmount = () => -(vaultContainer.scrollWidth - window.innerWidth);
@@ -168,19 +153,18 @@ window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
 
-// 8. Kinetic Image Hover (Moving effect inside container)
+// 7. Kinetic Image Hover (Moving image inside container)
 if (!isTouchDevice) {
     const imgHoverContainers = document.querySelectorAll('.img-hover');
     imgHoverContainers.forEach(container => {
         const img = container.querySelector('img');
         
         container.addEventListener('mouseenter', () => {
-            gsap.to(img, { scale: 1.15, duration: 0.8, ease: "power2.out", filter: "grayscale(0%)" });
+            gsap.to(img, { scale: 1.15, duration: 0.8, ease: "power2.out" });
         });
         
         container.addEventListener('mousemove', (e) => {
             const rect = container.getBoundingClientRect();
-            // Calculate mouse position relative to center of element (-0.5 to 0.5)
             const xPos = (e.clientX - rect.left) / rect.width - 0.5;
             const yPos = (e.clientY - rect.top) / rect.height - 0.5;
             
@@ -192,7 +176,7 @@ if (!isTouchDevice) {
         });
     });
 
-  // 9. 3D Tilt Card Logic (Desktop only)
+  // 8. 3D Tilt Card Logic (Desktop only)
   const tiltCards = document.querySelectorAll('.tilt-card');
   tiltCards.forEach(card => {
       const inner = card.querySelector('.tilt-inner');
@@ -204,8 +188,8 @@ if (!isTouchDevice) {
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
           
-          const rotateX = ((y - centerY) / centerY) * -12;
-          const rotateY = ((x - centerX) / centerX) * 12;
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
           
           gsap.to(inner, { rotateX: rotateX, rotateY: rotateY, duration: 0.5, ease: 'power2.out' });
       });
@@ -216,7 +200,7 @@ if (!isTouchDevice) {
   });
 }
 
-// 10. Charity Impact Counter Animations
+// 9. Charity Impact Counter Animations
 const counters = document.querySelectorAll('.impact-counter');
 counters.forEach(counter => {
   let target = parseInt(counter.getAttribute('data-target'), 10);
