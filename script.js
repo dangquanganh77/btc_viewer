@@ -1,21 +1,17 @@
-// 1. Initialize Lenis (Smooth Scroll - OPTIMIZED FOR LOW LATENCY)
+// 1. Initialize Lenis (Smooth Scroll)
 const lenis = new Lenis({
-  lerp: 0.1, // Replaces the heavy 1.2s duration. 0.1 provides instant, buttery physics.
-  smoothWheel: true,
-  wheelMultiplier: 1.2, // Makes the wheel feel slightly more responsive
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
   mouseMultiplier: 1,
   touchMultiplier: 2,
 });
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-gsap.ticker.lagSmoothing(0, 0);
+gsap.ticker.lagSmoothing(0);
 
 // 2. Custom Magnetic Cursor
 const cursor = document.getElementById('custom-cursor');
