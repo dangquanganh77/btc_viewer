@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-ink text-cream">
+<html lang="en" class="scroll-smooth bg-ink text-cream">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,9 +39,9 @@
 
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 w-full z-40 py-3 sm:py-4 px-4 md:px-12 flex justify-between items-center bg-ink/95 backdrop-blur-md border-b border-cream/20">
-        <div class="flex items-center gap-3 sm:gap-5 cursor-interact">
-            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Beyond the Court Logo" class="h-11 sm:h-14 md:h-16 w-auto object-contain filter drop-shadow-[0_0_8px_rgba(108,140,213,0.4)]">
-            <span class="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-widest text-cream hover:text-iceblue transition-colors mt-0.5">BEYOND THE COURT</span>
+        <div class="flex items-center gap-3 sm:gap-4 cursor-interact">
+            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Beyond the Court Logo" class="h-10 sm:h-12 w-auto object-contain">
+            <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream hover:text-sapphire transition-colors mt-0.5">BEYOND THE COURT</span>
         </div>
         <button id="open-drawer-btn" class="cursor-interact group relative px-5 sm:px-7 py-2.5 overflow-hidden border border-cream/50 text-cream font-bold text-xs sm:text-sm tracking-widest uppercase transition-colors duration-300 bg-ink rounded-none">
             <span class="relative z-10 group-hover:text-ink transition-colors duration-300 text-center block w-full whitespace-nowrap">REACH OUT TO US</span>
@@ -88,17 +88,22 @@
         <!-- 1. Hero Section -->
         <section class="relative min-h-[92vh] pt-44 md:pt-52 pb-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden bg-ink" id="hero">
             
+            <!-- Ambient Tactical Playbook Vector -->
             <div class="absolute inset-0 z-0 pointer-events-none mix-blend-screen overflow-hidden">
                 <svg class="tactical-ambient-svg absolute top-1/2 left-1/2 min-w-[150vw] md:min-w-[120vw] h-auto" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="960" y1="0" x2="960" y2="1080" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
                     <circle cx="960" cy="540" r="280" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
                     <circle cx="960" cy="540" r="90" stroke="#FCF1D0" stroke-width="4" stroke-dasharray="15 15" class="tactical-spin" style="transform-origin: 960px 540px;" />
+                    
                     <path d="M 0 150 L 300 150 Q 750 540 300 930 L 0 930" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
                     <path d="M 1920 150 L 1620 150 Q 1170 540 1620 930 L 1920 930" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
+                    
                     <path d="M 400 350 Q 650 500 850 420" stroke="#FCF1D0" stroke-width="4" stroke-dasharray="15 15" class="tactical-arrow" />
                     <polygon points="860,420 835,410 845,435" fill="#FCF1D0" class="tactical-pulse" />
+                    
                     <path d="M 1520 750 Q 1250 600 1050 680" stroke="#FCF1D0" stroke-width="4" stroke-dasharray="15 15" class="tactical-arrow" />
                     <polygon points="1040,680 1065,690 1055,665" fill="#FCF1D0" class="tactical-pulse" />
+                    
                     <g class="tactical-pulse">
                         <path d="M 380 330 L 420 370 M 420 330 L 380 370" stroke="#FCF1D0" stroke-width="5" />
                         <path d="M 480 250 L 520 290 M 520 250 L 480 290" stroke="#FCF1D0" stroke-width="5" />
@@ -108,6 +113,7 @@
                 </svg>
             </div>
 
+            <!-- Tactical Guide Grid Lines -->
             <div class="absolute inset-0 pointer-events-none z-0 opacity-15">
                 <div class="h-full w-[1px] bg-cream absolute left-[8%]"></div>
                 <div class="h-full w-[1px] bg-cream absolute right-[8%]"></div>
@@ -141,29 +147,31 @@
             </div>
 
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" id="hero-parallax-container">
-                <div class="parallax-img tilt-card absolute top-[22%] right-[5%] w-[32vw] md:w-[17vw] aspect-portrait overflow-hidden opacity-0 perspective-1000">
-                    <div class="tilt-inner tech-frame bg-navy shadow-[0_15px_30px_rgba(0,0,0,0.5)] w-full h-full">
-                        <img src="assets/vault/Charity%20Cup/IMG_7230.jpg" alt="Athletes" class="w-full h-full object-cover transition-transform duration-700 pointer-events-auto">
-                        <div class="absolute top-2 left-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30">CAM_01</div>
+                <!-- Vertical Card: Matching Portrait Shot -->
+                <div class="parallax-img absolute top-[22%] right-[5%] w-[32vw] md:w-[17vw] aspect-portrait overflow-hidden opacity-0 tech-frame bg-navy">
+                    <div class="img-hover w-full h-full">
+                        <img src="assets/vault/The First Step/IMG_6254.jpg" alt="Athletes" class="w-full h-full object-cover pointer-events-auto">
                     </div>
+                    <div class="absolute top-2 left-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30 z-10">CAM_01</div>
                 </div>
-                <div class="parallax-img tilt-card absolute bottom-[8%] right-[18%] md:right-[22%] w-[42vw] md:w-[25vw] aspect-video overflow-hidden opacity-0 perspective-1000">
-                    <div class="tilt-inner tech-frame bg-navy shadow-[0_15px_30px_rgba(0,0,0,0.5)] w-full h-full">
-                        <img src="assets/vault/Charity%20Cup/SecondStepDay3Night%20-%2000000018.jpg" alt="Night Match Action" class="w-full h-full object-cover transition-transform duration-700 pointer-events-auto">
-                        <div class="absolute top-2 right-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30">REC_LIVE</div>
+                <!-- Horizontal Card: Genuine Landscape Match Shot -->
+                <div class="parallax-img absolute bottom-[8%] right-[18%] md:right-[22%] w-[42vw] md:w-[23vw] aspect-video overflow-hidden opacity-0 tech-frame bg-navy">
+                    <div class="img-hover w-full h-full">
+                        <img src="assets/vault/Charity Cup/Copy of DSC_0674.jpg" alt="Action Shot" class="w-full h-full object-cover pointer-events-auto">
                     </div>
+                    <div class="absolute top-2 right-2 text-[9px] bg-ink/90 text-cream px-1.5 py-0.5 border border-cream/30 z-10">REC_LIVE</div>
                 </div>
             </div>
         </section>
 
         <!-- 2. Primary Running Bar -->
         <section class="py-5 bg-sapphire border-y border-cream/20 overflow-hidden relative z-10">
-            <div class="marquee-container flex whitespace-nowrap w-full">
-                <div class="marquee-track flex text-cream font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-wide">
-                    <div class="px-6 flex items-center">BEYOND THE COURT<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span></div>
-                    <div class="px-6 flex items-center">BEYOND THE COURT<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span></div>
-                    <div class="px-6 flex items-center">BEYOND THE COURT<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span></div>
-                    <div class="px-6 flex items-center">BEYOND THE COURT<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-3.5 text-cream/40 font-mono text-2xl">//</span></div>
+            <div class="marquee-container flex whitespace-nowrap w-full overflow-hidden">
+                <div class="marquee-track flex items-center text-cream font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-wide">
+                    <div class="inline-flex items-center">BEYOND THE COURT<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-5 text-cream/40 font-mono text-2xl">//</span></div>
+                    <div class="inline-flex items-center">BEYOND THE COURT<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-5 text-cream/40 font-mono text-2xl">//</span></div>
+                    <div class="inline-flex items-center">BEYOND THE COURT<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-5 text-cream/40 font-mono text-2xl">//</span></div>
+                    <div class="inline-flex items-center">BEYOND THE COURT<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>EST 2026<span class="mx-5 text-cream/40 font-mono text-2xl">//</span>MULTI SPORTS<span class="mx-5 text-cream/40 font-mono text-2xl">//</span></div>
                 </div>
             </div>
         </section>
@@ -191,16 +199,16 @@
                 </div>
                 
                 <div class="w-full lg:w-1/2 flex justify-center items-center gap-5 sm:gap-6 pt-8 lg:pt-0">
-                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-20 translate-y-6 md:translate-y-12 group">
-                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy shadow-2xl transition-all duration-500 group-hover:scale-[1.05] group-hover:border-cream group-hover:shadow-[0_0_25px_rgba(252,241,208,0.2)]">
-                            <img src="assets/vault/Charity%20Cup/SecondStepDay2%20-%2000000021.jpg" alt="Match Action" class="w-full h-full object-cover">
-                            <div class="absolute bottom-3 left-3 bg-ink/95 border border-sapphire text-cream px-2 py-0.5 text-[9px] font-bold">MATCH_01</div>
+                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-20 translate-y-6 md:translate-y-12">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/vault/Charity Cup/SecondStepDay2 - 00000021.jpg" alt="Match Action" class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 bg-ink/95 border border-sapphire text-cream px-2 py-0.5 text-[9px] font-bold z-10">MATCH_01</div>
                         </div>
                     </div>
-                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-10 -translate-y-6 md:-translate-y-12 group">
-                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy shadow-2xl transition-all duration-500 group-hover:scale-[1.05] group-hover:border-cream group-hover:shadow-[0_0_25px_rgba(252,241,208,0.2)]">
-                            <img src="assets/vault/Charity%20Cup/Copy%20of%20SecondStepDay3Morn%20-%2000000037.jpg" alt="Team Huddle" class="w-full h-full object-cover">
-                            <div class="absolute top-3 right-3 bg-sapphire text-cream px-2 py-0.5 text-[9px] font-bold">UNITY</div>
+                    <div class="tilt-card cursor-interact w-1/2 aspect-portrait perspective-1000 z-10 -translate-y-6 md:-translate-y-12">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy img-hover">
+                            <img src="assets/vault/Charity Cup/Copy of SecondStepDay3Morn - 00000037.jpg" alt="Team Huddle" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-sapphire text-cream px-2 py-0.5 text-[9px] font-bold z-10">UNITY</div>
                         </div>
                     </div>
                 </div>
@@ -209,27 +217,18 @@
 
         <!-- 4. The Tournament Vault -->
         <section id="vault" class="vault-section bg-navy text-cream h-screen flex items-center overflow-hidden relative border-y border-cream/20 z-20">
-            
-            <!-- Cinematic Background Embed -->
-            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-                <img src="assets/sponsors/NSA/DSC_0032.JPG" alt="Championship Moment Background" class="w-full h-full object-cover opacity-15 mix-blend-luminosity scale-[1.03] filter blur-[2px]">
-                <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50"></div>
-            </div>
-
             <div class="vault-container flex pl-4 sm:pl-12 md:pl-24 gap-8 sm:gap-12 md:gap-20 items-center w-max h-full no-scrollbar relative z-10">
                 <div class="w-[85vw] sm:w-[50vw] md:w-[32vw] flex-shrink-0 pr-6 md:pr-10">
                     <div class="border-b-2 border-sapphire pb-3 mb-5">
-                        <h2 class="font-display text-[12vw] sm:text-[10vw] md:text-[7vw] uppercase leading-none text-cream tracking-tight drop-shadow-md">THE VAULT</h2>
+                        <h2 class="font-display text-[12vw] sm:text-[10vw] md:text-[7vw] uppercase leading-none text-cream tracking-tight">THE VAULT</h2>
                     </div>
-                    <p class="text-xs sm:text-sm text-cream/80 max-w-sm uppercase leading-relaxed tracking-widest bg-ink/80 p-4 border border-cream/20 backdrop-blur-md">An archive of our past multi-sport collisions. Blood, sweat, and funds raised for the city we call home.</p>
+                    <p class="text-xs sm:text-sm text-cream/70 max-w-sm uppercase leading-relaxed tracking-widest bg-ink p-4 border border-cream/15">An archive of our past multi-sport collisions. Blood, sweat, and funds raised for the city we call home.</p>
                 </div>
                 
-                <!-- The First Step -->
-                <div class="tilt-card cursor-interact min-w-[85vw] sm:min-w-[55vw] md:min-w-[44vw] h-[60vh] sm:h-[64vh] flex-shrink-0 relative perspective-1000">
-                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-frame overflow-hidden shadow-2xl">
-                        <img src="assets/vault/The%20First%20Step/_MG_8946.jpg" class="w-full h-full object-cover object-center" alt="Tournament Team Presentation">
-                        <div class="absolute inset-0 z-20 p-5 sm:p-7 flex flex-col justify-between pointer-events-none transform translate-z-12 bg-gradient-to-t from-ink/95 via-ink/20 to-transparent">
+                <div class="tilt-card cursor-interact w-[85vw] sm:w-[55vw] md:w-[42vw] flex-shrink-0 aspect-video relative group perspective-1000">
+                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-frame img-hover overflow-hidden">
+                        <img src="assets/vault/The First Step/_MG_8946.jpg" class="w-full h-full object-cover transition-transform duration-500" alt="Tournament">
+                        <div class="absolute inset-0 z-20 p-5 sm:p-7 flex flex-col justify-between pointer-events-none transform translate-z-12 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent">
                             <span class="bg-ink border border-cream/30 text-cream text-[9px] px-2 py-0.5 uppercase tracking-widest w-max">RECORD_01</span>
                             <div>
                                 <h3 class="font-display text-3xl sm:text-4xl md:text-5xl uppercase text-cream tracking-wide mb-3">THE FIRST STEP</h3>
@@ -242,11 +241,10 @@
                     </div>
                 </div>
 
-                <!-- Football Charity Cup -->
-                <div class="tilt-card cursor-interact min-w-[75vw] sm:min-w-[42vw] md:min-w-[30vw] h-[60vh] sm:h-[64vh] flex-shrink-0 relative perspective-1000 pr-10 md:pr-20">
-                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-frame overflow-hidden shadow-2xl">
-                        <img src="assets/vault/Charity%20Cup/DSC_0470.JPG" class="w-full h-full object-cover object-center" alt="Charity Cup Players">
-                        <div class="absolute inset-0 z-20 p-5 sm:p-7 flex flex-col justify-between pointer-events-none transform translate-z-12 bg-gradient-to-t from-ink/95 via-ink/20 to-transparent">
+                <div class="tilt-card cursor-interact w-[75vw] sm:w-[42vw] md:w-[28vw] flex-shrink-0 aspect-[4/5] relative group perspective-1000 pr-10 md:pr-20">
+                    <div class="tilt-inner w-full h-full transform-style-3d relative bg-ink tech-frame img-hover overflow-hidden">
+                        <img src="assets/vault/Charity Cup/SecondStepDay3Night - 00000018.jpg" class="w-full h-full object-cover transition-transform duration-500" alt="Tournament">
+                        <div class="absolute inset-0 z-20 p-5 sm:p-7 flex flex-col justify-between pointer-events-none transform translate-z-12 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent">
                             <span class="bg-ink border border-cream/30 text-cream text-[9px] px-2 py-0.5 uppercase tracking-widest w-max">RECORD_02</span>
                             <div>
                                 <h3 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase text-cream tracking-wide mb-3 leading-none">FOOTBALL CHARITY CUP</h3>
@@ -260,8 +258,8 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 5. In Action Gallery -->
+
+        <!-- 5. In Action (Expanded Dual Rail Gallery) -->
         <section class="py-24 md:py-32 bg-ink relative overflow-hidden z-10 border-b border-cream/10" id="gallery">
             <div class="paper-tactile-texture"></div>
 
@@ -269,199 +267,154 @@
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-5 border-b-2 border-sapphire pb-5">
                     <h2 class="font-display text-5xl md:text-7xl uppercase text-cream leading-none tracking-tight m-0">IN ACTION</h2>
                     <p class="text-xs font-mono text-cream/70 uppercase max-w-sm tracking-widest leading-relaxed">
-                        High-intensity youth athletics captured live across courts and pitches. Full uncropped fidelity, grit, and untamed velocity. Hover to pause and inspect.
+                        High-intensity youth athletics captured live across courts and pitches. Velocity, grit, and untamed competition.
                     </p>
                 </div>
             </div>
 
-            <!-- Track 1 (Restored 3D Tilt Wrapper) -->
+            <!-- Track 1 (Left Moving Track - 6 Unique frames + duplicate loop) -->
             <div class="gallery-viewport w-full overflow-hidden mb-6 relative z-10">
-                <div class="gallery-rail flex items-center gap-6 w-max h-[36vh]" id="track-left">
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/Copy%20of%20DSC_0674.jpg" class="h-full w-auto object-contain block" alt="Match Point">
+                <div class="gallery-rail flex gap-6 w-max" id="track-left">
+                    <!-- Unique Set -->
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/Copy of DSC_0674.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/DSC_0473.JPG" class="h-full w-auto object-contain block" alt="Defense">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/SecondStepDay2 - 00000021.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_2479.JPG" class="h-full w-auto object-contain block" alt="Fastbreak">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_6254.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/IMG_7230.jpg" class="h-full w-auto object-contain block" alt="Huddle">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/DSC_0615.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_3815.JPG" class="h-full w-auto object-contain block" alt="Jump Shot">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_2625.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/DSC_0644.JPG" class="h-full w-auto object-contain block" alt="Focus">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/IMG_8742.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_2686.JPG" class="h-full w-auto object-contain block" alt="Layup">
+                    <!-- Duplicates for seamless infinite loop -->
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/Copy of DSC_0674.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/SecondStepDay2%20-%2000000021.jpg" class="h-full w-auto object-contain block" alt="In the paint">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/SecondStepDay2 - 00000021.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-
-                    <!-- Duplicates for GSAP Infinite Loop -->
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/Copy%20of%20DSC_0674.jpg" class="h-full w-auto object-contain block" alt="Match Point">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_6254.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/DSC_0473.JPG" class="h-full w-auto object-contain block" alt="Defense">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/DSC_0615.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_2479.JPG" class="h-full w-auto object-contain block" alt="Fastbreak">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_2625.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/IMG_7230.jpg" class="h-full w-auto object-contain block" alt="Huddle">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_3815.JPG" class="h-full w-auto object-contain block" alt="Jump Shot">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/DSC_0644.JPG" class="h-full w-auto object-contain block" alt="Focus">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_2686.JPG" class="h-full w-auto object-contain block" alt="Layup">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/SecondStepDay2%20-%2000000021.jpg" class="h-full w-auto object-contain block" alt="In the paint">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/IMG_8742.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Track 2 -->
+            <!-- Track 2 (Right Moving Track - 6 Unique frames + duplicate loop) -->
             <div class="gallery-viewport w-full overflow-hidden relative z-10">
-                <div class="gallery-rail flex items-center gap-6 w-max h-[36vh]" id="track-right">
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_4602.jpg" class="h-full w-auto object-contain block" alt="Intensity">
+                <div class="gallery-rail flex gap-6 w-max" id="track-right">
+                    <!-- Unique Set -->
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_4602.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/sponsors/NSA/DSC_1069.jpg" class="h-full w-auto object-contain block" alt="Side Pitch">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/sponsors/NSA/DSC_0032.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/IMG_7567.jpg" class="h-full w-auto object-contain block" alt="Cross-court">
+                    <div class="tilt-card cursor-interact aspect-[4/3] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy flex items-center justify-center p-6">
+                            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" class="!w-full !h-full object-contain" alt="Logo">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_2915.JPG" class="h-full w-auto object-contain block" alt="Dribble drive">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/DSC_1045.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/sponsors/NSA/DSC_0032.JPG" class="h-full w-auto object-contain block" alt="Championship Moment">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_3477.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_3499.JPG" class="h-full w-auto object-contain block" alt="Sideline strategy">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/IMG_8959.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/IMG_8742.jpg" class="h-full w-auto object-contain block" alt="Celebration">
+                    <!-- Duplicates for seamless infinite loop -->
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_4602.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full aspect-square transform-style-3d tech-frame bg-navy flex items-center justify-center p-8 transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" class="h-full w-auto object-contain" alt="Brand Logo">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/sponsors/NSA/DSC_0032.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-
-                    <!-- Duplicates for GSAP Infinite Loop -->
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_4602.jpg" class="h-full w-auto object-contain block" alt="Intensity">
+                    <div class="tilt-card cursor-interact aspect-[4/3] h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-navy flex items-center justify-center p-6">
+                            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" class="!w-full !h-full object-contain" alt="Logo">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/sponsors/NSA/DSC_1069.jpg" class="h-full w-auto object-contain block" alt="Side Pitch">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/DSC_1045.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/IMG_7567.jpg" class="h-full w-auto object-contain block" alt="Cross-court">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/The First Step/IMG_3477.JPG" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_2915.JPG" class="h-full w-auto object-contain block" alt="Dribble drive">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/sponsors/NSA/DSC_0032.JPG" class="h-full w-auto object-contain block" alt="Championship Moment">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/The%20First%20Step/IMG_3499.JPG" class="h-full w-auto object-contain block" alt="Sideline strategy">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full w-auto transform-style-3d tech-frame bg-navy transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/vault/Charity%20Cup/IMG_8742.jpg" class="h-full w-auto object-contain block" alt="Celebration">
-                        </div>
-                    </div>
-                    <div class="tilt-card gallery-card cursor-interact h-full flex-shrink-0 perspective-1000 group">
-                        <div class="tilt-inner h-full aspect-square transform-style-3d tech-frame bg-navy flex items-center justify-center p-8 transition-all duration-500 group-hover:scale-[1.08] group-hover:border-cream group-hover:shadow-[0_0_30px_rgba(252,241,208,0.25)]">
-                            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" class="h-full w-auto object-contain" alt="Brand Logo">
+                    <div class="tilt-card cursor-interact h-[34vh] flex-shrink-0 perspective-1000">
+                        <div class="tilt-inner h-full transform-style-3d tech-frame bg-navy img-hover flex">
+                            <img src="assets/vault/Charity Cup/IMG_8959.jpg" class="h-full !w-auto !max-w-none block object-cover" alt="Action">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- 6. Charity Impact -->
         <section class="py-24 md:py-32 px-4 md:px-12 bg-navy z-10 relative overflow-hidden border-b border-cream/20">
-            
-            <!-- Cinematic Background -->
-            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-                <img src="assets/vault/Charity%20Cup/IMG_8718.jpg" alt="Court Texture" class="w-full h-full object-cover opacity-15 mix-blend-luminosity scale-110 filter blur-[2px]">
-                <div class="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/85 to-navy/95"></div>
-            </div>
-
             <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-14 md:gap-12 w-full relative z-10">
-                <div class="w-full lg:w-1/2 flex flex-col border border-cream/20 bg-ink/90 backdrop-blur-md shadow-2xl">
+                
+                <!-- Left: Metric Cards with flush edge-to-edge dividers -->
+                <div class="w-full lg:w-1/2 flex flex-col border border-cream/20 bg-ink">
                     <div class="w-full p-8 sm:p-10 border-b border-cream/20 relative">
                         <div class="flex items-center gap-2 mb-2">
                             <span class="w-2 h-2 bg-sapphire inline-block"></span>
@@ -470,39 +423,51 @@
                         <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs sm:text-sm mb-1">TOTAL DONATED (VND)</h4>
                         <div class="impact-counter font-display text-5xl sm:text-7xl text-cream tracking-tight" data-target="52000000">0</div>
                     </div>
-                    <div class="w-full flex flex-col sm:flex-row">
-                        <div class="w-full sm:w-1/2 p-8 sm:p-10 border-b sm:border-b-0 sm:border-r border-cream/20 relative">
-                            <span class="text-[10px] uppercase tracking-widest text-cream/50 block mb-2">METRIC_02</span>
-                            <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs mb-1">ATHLETES ENGAGED</h4>
-                            <div class="flex items-baseline">
+                    
+                    <div class="w-full grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-cream/20 flex-1">
+                        <div class="p-8 sm:p-10 flex flex-col justify-between h-full">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-cream/50 block mb-2">METRIC_02</span>
+                                <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs mb-1">ATHLETES ENGAGED</h4>
+                            </div>
+                            <div class="flex items-baseline mt-4">
                                 <div class="impact-counter font-display text-4xl sm:text-5xl text-cream tracking-tight" data-target="120">0</div>
                                 <span class="font-display text-4xl sm:text-5xl text-sapphire ml-1.5">+</span>
                             </div>
                         </div>
-                        <div class="w-full sm:w-1/2 p-8 sm:p-10 relative">
-                            <span class="text-[10px] uppercase tracking-widest text-cream/50 block mb-2">METRIC_03</span>
-                            <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs mb-1">TOURNAMENTS HOSTED</h4>
-                            <div class="impact-counter font-display text-4xl sm:text-5xl text-cream tracking-tight" data-target="2">0</div>
+                        
+                        <div class="p-8 sm:p-10 flex flex-col justify-between h-full">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-cream/50 block mb-2">METRIC_03</span>
+                                <h4 class="text-sapphire uppercase tracking-widest font-bold text-xs mb-1">TOURNAMENTS HOSTED</h4>
+                            </div>
+                            <div class="mt-4">
+                                <div class="impact-counter font-display text-4xl sm:text-5xl text-cream tracking-tight" data-target="2">0</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Right: Visual Impact Frames -->
                 <div class="w-full lg:w-1/2 flex flex-col justify-center h-full gap-5">
-                    <div class="tilt-card cursor-interact w-full h-[28vh] sm:h-[36vh] relative perspective-1000 group">
-                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink shadow-2xl transition-all duration-500 group-hover:scale-[1.05] group-hover:border-cream group-hover:shadow-[0_0_25px_rgba(252,241,208,0.2)]">
-                            <img src="assets/sponsors/NSA/DSC_1069.jpg" alt="Impact" class="w-full h-full object-cover">
-                            <div class="absolute bottom-3 left-3 text-cream font-mono text-[10px] tracking-widest bg-navy px-2 py-0.5 border border-cream/20">CHARITY_OUTREACH</div>
+                    <!-- Frame 1: Replaced with authentic TFS Charity outreach photograph -->
+                    <div class="tilt-card cursor-interact w-full h-[28vh] sm:h-[36vh] relative perspective-1000">
+                        <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink img-hover">
+                            <img src="assets/vault/The First Step/TFS Charity/IMG_2096.jpg" alt="Charity Outreach" class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 text-cream font-mono text-[10px] tracking-widest bg-navy px-2 py-0.5 border border-cream/20 z-10">CHARITY_OUTREACH</div>
                         </div>
                     </div>
+                    
+                    <!-- Frame 2: Horizontal match action photo + Dragon Emblem card -->
                     <div class="w-full flex gap-5 h-[18vh] sm:h-[22vh]">
-                        <div class="tilt-card cursor-interact w-2/3 h-full perspective-1000 group">
-                            <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink shadow-2xl transition-all duration-500 group-hover:scale-[1.05] group-hover:border-cream group-hover:shadow-[0_0_25px_rgba(252,241,208,0.2)]">
-                                <img src="assets/vault/The%20First%20Step/IMG_4602.jpg" alt="Community" class="w-full h-full object-cover">
+                        <div class="tilt-card cursor-interact w-2/3 h-full perspective-1000">
+                            <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-ink img-hover">
+                                <img src="assets/vault/Charity Cup/DSC_0644.JPG" alt="Match Action" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <div class="tilt-card cursor-interact w-1/3 h-full perspective-1000 group">
-                            <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-sapphire flex justify-center items-center p-4 transition-all duration-500 group-hover:scale-[1.05] group-hover:bg-cream group-hover:border-cream shadow-2xl">
-                                <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Dragon Logo" class="object-contain w-full h-full filter invert group-hover:invert-0 transition-all duration-500">
+                        <div class="tilt-card cursor-interact w-1/3 h-full perspective-1000">
+                            <div class="tilt-inner w-full h-full transform-style-3d tech-frame bg-sapphire flex justify-center items-center p-4 hover:bg-cream transition-colors duration-500 group">
+                                <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Dragon Logo" class="object-contain w-full h-full">
                             </div>
                         </div>
                     </div>
@@ -512,12 +477,12 @@
 
         <!-- Secondary Marquee -->
         <section class="py-4 bg-ink border-y border-cream/20 overflow-hidden relative z-10">
-            <div class="marquee-container flex whitespace-nowrap w-full">
-                <div class="marquee-track-reverse flex text-sapphire font-mono text-lg sm:text-xl font-bold uppercase tracking-widest">
-                    <div class="px-5 flex items-center">MORE THAN JUST A GAME<span class="mx-3 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-3 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-3 text-cream/20">X</span></div>
-                    <div class="px-5 flex items-center">MORE THAN JUST A GAME<span class="mx-3 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-3 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-3 text-cream/20">X</span></div>
-                    <div class="px-5 flex items-center">MORE THAN JUST A GAME<span class="mx-3 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-3 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-3 text-cream/20">X</span></div>
-                    <div class="px-5 flex items-center">MORE THAN JUST A GAME<span class="mx-3 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-3 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-3 text-cream/20">X</span></div>
+            <div class="marquee-container flex whitespace-nowrap w-full overflow-hidden">
+                <div class="marquee-track-reverse flex items-center text-sapphire font-mono text-lg sm:text-xl font-bold uppercase tracking-widest">
+                    <div class="inline-flex items-center">MORE THAN JUST A GAME<span class="mx-5 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-5 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-5 text-cream/20">X</span></div>
+                    <div class="inline-flex items-center">MORE THAN JUST A GAME<span class="mx-5 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-5 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-5 text-cream/20">X</span></div>
+                    <div class="inline-flex items-center">MORE THAN JUST A GAME<span class="mx-5 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-5 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-5 text-cream/20">X</span></div>
+                    <div class="inline-flex items-center">MORE THAN JUST A GAME<span class="mx-5 text-cream/20">X</span>YOUTH ATHLETICS<span class="mx-5 text-cream/20">X</span>DA NANG VIETNAM<span class="mx-5 text-cream/20">X</span></div>
                 </div>
             </div>
         </section>
