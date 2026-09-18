@@ -133,7 +133,7 @@ window.addEventListener('load', () => {
       });
   }
 
-  // B. Gallery Moving Tracks (TimeScale Deceleration bounded to images only)
+  // B. Gallery Moving Tracks (0.4s Deceleration strictly bounded to card hover)
   const trackLeft = document.getElementById('track-left');
   const trackRight = document.getElementById('track-right');
 
@@ -162,7 +162,6 @@ window.addEventListener('load', () => {
           }
       });
 
-      // Target hitboxes exactly on the images (.tilt-card), preventing stops on the padding gaps
       const galleryCards = document.querySelectorAll('#gallery .tilt-card');
       galleryCards.forEach(card => {
           card.addEventListener('mouseenter', () => {
@@ -174,7 +173,7 @@ window.addEventListener('load', () => {
       });
   }
 
-  // C. Footer Background Text (Moves Forward / Left Direction)
+  // C. Footer Background Text
   const footerTrack = document.querySelector('.footer-marquee-track');
   if (footerTrack) {
       gsap.fromTo(footerTrack, 
