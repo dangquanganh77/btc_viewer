@@ -87,6 +87,38 @@
     <main>
         <!-- 1. Hero Section -->
         <section class="relative min-h-[92vh] pt-44 md:pt-52 pb-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden bg-ink" id="hero">
+            
+            <!-- NEW: Ambient Tactical Playbook Vector -->
+            <div class="absolute inset-0 z-0 pointer-events-none opacity-[0.06] mix-blend-screen overflow-hidden">
+                <svg class="tactical-ambient-svg absolute top-1/2 left-1/2 min-w-[150vw] md:min-w-[120vw] h-auto" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Center Court Layout -->
+                    <line x1="960" y1="0" x2="960" y2="1080" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
+                    <circle cx="960" cy="540" r="280" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
+                    <circle cx="960" cy="540" r="90" stroke="#FCF1D0" stroke-width="4" stroke-dasharray="15 15" class="tactical-spin" style="transform-origin: 960px 540px;" />
+                    
+                    <!-- 3-Point / Penalty Arcs -->
+                    <path d="M 0 150 L 300 150 Q 750 540 300 930 L 0 930" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
+                    <path d="M 1920 150 L 1620 150 Q 1170 540 1620 930 L 1920 930" stroke="#FCF1D0" stroke-width="4" class="tactical-path" />
+                    
+                    <!-- Tactical Marching Play Arrows -->
+                    <!-- Left play -->
+                    <path d="M 400 350 Q 650 500 850 420" stroke="#FCF1D0" stroke-width="4" stroke-dasharray="15 15" class="tactical-arrow" />
+                    <polygon points="860,420 835,410 845,435" fill="#FCF1D0" class="tactical-pulse" />
+                    <!-- Right play -->
+                    <path d="M 1520 750 Q 1250 600 1050 680" stroke="#FCF1D0" stroke-width="4" stroke-dasharray="15 15" class="tactical-arrow" />
+                    <polygon points="1040,680 1065,690 1055,665" fill="#FCF1D0" class="tactical-pulse" />
+                    
+                    <!-- Player Positions (X Markers) -->
+                    <g class="tactical-pulse">
+                        <path d="M 380 330 L 420 370 M 420 330 L 380 370" stroke="#FCF1D0" stroke-width="5" />
+                        <path d="M 480 250 L 520 290 M 520 250 L 480 290" stroke="#FCF1D0" stroke-width="5" />
+                        <path d="M 1500 770 L 1540 730 M 1540 770 L 1500 730" stroke="#FCF1D0" stroke-width="5" />
+                        <path d="M 1400 850 L 1440 810 M 1440 850 L 1400 810" stroke="#FCF1D0" stroke-width="5" />
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Tactical Guide Grid Lines -->
             <div class="absolute inset-0 pointer-events-none z-0 opacity-15">
                 <div class="h-full w-[1px] bg-cream absolute left-[8%]"></div>
                 <div class="h-full w-[1px] bg-cream absolute right-[8%]"></div>
@@ -146,9 +178,8 @@
             </div>
         </section>
 
-        <!-- 3. Culture & Mission Manifesto (with Graphical Paper Texture) -->
+        <!-- 3. Culture & Mission Manifesto -->
         <section class="relative py-24 md:py-32 px-4 md:px-12 min-h-screen flex items-center mission-section overflow-hidden z-0 bg-ink">
-            <!-- Graphical Paper/Blueprint Texture Layer -->
             <div class="paper-tactile-texture"></div>
             
             <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-14 lg:gap-12 items-center justify-between relative z-10">
@@ -230,9 +261,8 @@
             </div>
         </section>
 
-        <!-- 5. In Action (with Graphical Paper Texture) -->
+        <!-- 5. In Action -->
         <section class="py-24 md:py-32 bg-ink relative overflow-hidden z-10 border-b border-cream/10" id="gallery">
-            <!-- Graphical Paper/Blueprint Texture Layer -->
             <div class="paper-tactile-texture"></div>
 
             <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10 mb-14">
@@ -383,7 +413,7 @@
         </section>
     </main>
 
-    <!-- 7. Footer (with Balanced Vertical Spacing) -->
+    <!-- 7. Footer -->
     <footer class="bg-navy pt-44 md:pt-48 pb-16 md:pb-20 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
         <!-- Elevated Background Watermark Track -->
         <div class="footer-bg-marquee absolute top-[40%] left-0 w-full transform -translate-y-1/2 pointer-events-none select-none z-0 overflow-hidden opacity-[0.06]">
@@ -400,7 +430,6 @@
                 <div class="absolute inset-0 w-full h-full bg-cream transform scale-y-0 origin-bottom transition-transform duration-500 ease-expo group-hover:scale-y-100 group-hover:origin-top"></div>
             </button>
             
-            <!-- Spacing Clearance Added Before Bottom Divider Line -->
             <div class="w-full max-w-7xl border-t border-cream/20 pt-8 mt-28 md:mt-36 flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs tracking-widest uppercase">
                 <div class="flex items-center gap-3">
                     <span class="w-2.5 h-2.5 bg-sapphire inline-block"></span>
