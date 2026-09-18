@@ -1,10 +1,8 @@
-// 1. Initialize Lenis (Smooth Scroll)
+// 1. Initialize Lenis (Smooth Scroll - OPTIMIZED FOR LOW LATENCY)
 const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-  direction: 'vertical',
-  gestureDirection: 'vertical',
-  smooth: true,
+  lerp: 0.1, // Replaces the heavy 1.2s duration. 0.1 provides instant, buttery physics.
+  smoothWheel: true,
+  wheelMultiplier: 1.2, // Makes the wheel feel slightly more responsive
   mouseMultiplier: 1,
   touchMultiplier: 2,
 });
@@ -133,7 +131,7 @@ window.addEventListener('load', () => {
       });
   }
 
-  // B. Gallery Moving Tracks (0.4s Deceleration strictly bounded to card hover)
+  // B. Gallery Moving Tracks
   const trackLeft = document.getElementById('track-left');
   const trackRight = document.getElementById('track-right');
 
@@ -185,7 +183,7 @@ window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
 
-// 8. Kinetic Pan & 3D Tilt (No Opacity or Filter Dimming)
+// 8. Kinetic Pan & 3D Tilt
 if (!isTouchDevice) {
   document.querySelectorAll('.img-hover').forEach(container => {
       const img = container.querySelector('img');
