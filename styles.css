@@ -17,16 +17,7 @@ a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* Absolute Grayscale Killer */
-img, 
-.tilt-inner img, 
-.gallery-card img, 
-.parallax-img img {
-  filter: none !important;
-  -webkit-filter: none !important;
-}
-
-/* Typography Stroke */
+/* Bulletproof Stroke Typography */
 .stroke-cream {
   -webkit-text-stroke: 1.5px #FCF1D0;
   text-stroke: 1.5px #FCF1D0;
@@ -41,81 +32,15 @@ img,
   }
 }
 
-/* Rigid Sharp Frames */
+/* Rigid Sharp Frame */
 .tech-frame {
-  border: 1px solid rgba(252, 241, 208, 0.4) !important;
+  border: 1px solid rgba(252, 241, 208, 0.45) !important;
   border-radius: 0px !important;
   box-shadow: inset 0 0 0 1px rgba(1, 7, 54, 0.6);
   position: relative;
-  /* Removed transform transition to allow GSAP full control */
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.tilt-card:hover .tech-frame {
-  border-color: rgba(252, 241, 208, 0.9) !important;
-  box-shadow: inset 0 0 0 1px rgba(1, 7, 54, 0.9), 0 0 16px rgba(108, 140, 213, 0.25);
-}
-
-/* ----------------------------------------------------
-   THE FIX: Vertical Clipping Prevention
-   ---------------------------------------------------- */
-.gallery-viewport {
-  overflow-x: hidden;
-  /* Allow the 3D rotation to poke above/below the track without decapitating the image */
-  overflow-y: visible; 
-  /* Add safe padding to absorb the physical pop-out */
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-  margin-top: -3.5rem;
-  margin-bottom: -3.5rem;
-}
-
-.gallery-viewport:hover .gallery-rail {
-  animation-play-state: paused !important;
-}
-
-.gallery-card {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%; /* controlled by HTML h-[36vh] */
-  width: auto;
-  flex-shrink: 0;
-  z-index: 10;
-}
-
-.gallery-card:hover {
-  z-index: 50; /* Ascend above siblings during pop-out */
-}
-
-.gallery-card img {
-  height: 100%;
-  width: auto;
-  max-width: none;
-  object-fit: contain;
-  pointer-events: none; /* Allows parent to capture the mouse events smoothly */
-}
-
-/* 3D Tilt Component (Stripped of CSS transitions for GSAP) */
-.perspective-1000 {
-  perspective: 1200px;
-}
-.transform-style-3d {
-  transform-style: preserve-3d;
-}
-.tilt-inner {
-  position: relative;
-  overflow: hidden; 
-  will-change: transform;
-  /* CRITICAL: No CSS transition on transform. GSAP powers this entirely now. */
-}
-.tilt-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Architectural Graph Paper */
+/* Sub-Pixel Hairline Architectural Graph Paper */
 .paper-tactile-texture {
   position: absolute;
   inset: 0;
@@ -127,27 +52,65 @@ img,
   background-size: 80px 80px;
 }
 
-/* Ambient Tactical Playbook Vector Animations */
+/* --- AMBIENT TACTICAL PLAYBOOK ANIMATIONS --- */
 .tactical-ambient-svg {
   animation: tacticalPan 40s linear infinite alternate;
   will-change: transform;
-  transform: translateZ(0); 
-  backface-visibility: hidden;
 }
 @keyframes tacticalPan {
   0% { transform: translate(-48%, -48%) scale(1.05); }
   100% { transform: translate(-52%, -52%) scale(1.05); }
 }
-.tactical-path { stroke-dasharray: 2000; stroke-dashoffset: 2000; opacity: 0.035; animation: tacticalDraw 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; }
-@keyframes tacticalDraw { 0% { stroke-dashoffset: 2000; } 100% { stroke-dashoffset: 0; } }
-.tactical-spin { opacity: 0.035; animation: tacticalRotate 90s linear infinite; }
-@keyframes tacticalRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.tactical-arrow { opacity: 0.075; animation: tacticalMarch 2.5s linear infinite; }
-@keyframes tacticalMarch { 0% { stroke-dashoffset: 30; } 100% { stroke-dashoffset: 0; } }
-.tactical-pulse { animation: pulseMarker 3.5s ease-in-out infinite alternate; }
-@keyframes pulseMarker { 0%, 100% { opacity: 0.04; } 50% { opacity: 0.11; } }
 
-/* Custom Tactical Cursor */
+.tactical-path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  opacity: 0.035;
+  animation: tacticalDraw 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+@keyframes tacticalDraw {
+  0% { stroke-dashoffset: 2000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.tactical-spin {
+  opacity: 0.035;
+  animation: tacticalRotate 90s linear infinite;
+}
+@keyframes tacticalRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tactical-arrow {
+  opacity: 0.075;
+  animation: tacticalMarch 2.5s linear infinite;
+}
+@keyframes tacticalMarch {
+  0% { stroke-dashoffset: 30; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.tactical-pulse {
+  animation: pulseMarker 3.5s ease-in-out infinite alternate;
+}
+@keyframes pulseMarker {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.11; }
+}
+
+/* Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Tactical Crosshair Cursor */
 #custom-cursor {
   position: fixed;
   top: 0;
@@ -160,9 +123,10 @@ img,
   pointer-events: none;
   z-index: 10000;
   transform: translate(-50%, -50%);
-  transition: width 0.15s ease, height 0.15s ease;
-  will-change: transform, width, height;
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 #custom-cursor.hover-glow {
   background-color: transparent !important;
   border: 1.5px solid #FCF1D0;
@@ -171,13 +135,43 @@ img,
   clip-path: polygon(0 15%, 15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%);
 }
 
+/* 3D Tilt Card Base */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.tilt-inner {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px !important;
+}
+.tilt-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  will-change: transform;
+}
+
 /* Drawer Backdrop */
 #drawer-overlay {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 #drawer-overlay.active {
   opacity: 1;
   pointer-events: all;
 }
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
