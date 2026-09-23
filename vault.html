@@ -1,147 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth bg-ink text-cream">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vault | Beyond the Court</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Link to the newly separated stylesheet -->
-    <link rel="stylesheet" href="vault_styles.css">
-</head>
-<body>
-
-    <nav>
-        <a href="index.html" class="nav-logo">BEYOND THE COURT</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="vault.html" style="color: var(--accent-color);">Vault</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="sponsors.html">Sponsors</a>
-            <a href="donation.html" class="nav-donate-btn">Donate</a>
-        </div>
-    </nav>
-
-    <section class="vault-hero">
-        <h1>THE VAULT</h1>
-        <p>The historical archive. A complete record of the venues, the victors, and the community impact that built our legacy.</p>
-    </section>
-
-    <main class="timeline-container">
-        <div class="timeline-node">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content" onclick="toggleNode(this)">
-                <span class="tournament-date">MARCH 2026</span>
-                <h2 class="tournament-title">The First Step</h2>
-                <p class="tournament-summary">Our inaugural U21 3v3 tournament. A defining moment that set the standard for competitive streetball and community charity in the city.</p>
-                <p class="instruction">Click to expand records</p>
-                
-                <div class="details-wrapper">
-                    <div class="details-inner">
-                        <div class="details-content">
-                            <div class="media-frame">
-                                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=1000" alt="The First Step Tournament Action">
-                            </div>
-                            
-                            <div class="stats-grid">
-                                <div class="stat-box">
-                                    <div class="stat-label">Category</div>
-                                    <div class="stat-value">U21 Men's 3v3</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-label">Location</div>
-                                    <div class="stat-value">Da Nang, Vietnam</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-label">Champions</div>
-                                    <div class="stat-value">[Team Name]</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-label">Impact</div>
-                                    <div class="stat-value">Local Charity</div>
-                                </div>
-                            </div>
-                            
-                            <p class="tournament-summary" style="margin-top: 10px;">
-                                Establishing the Beyond the Court initiative, this tournament brought together the best young talent in Da Nang. All profits were directed toward local charitable efforts, merging high-level athletics with real community support.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-node">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content" onclick="toggleNode(this)">
-                <span class="tournament-date">SUMMER 2026</span>
-                <h2 class="tournament-title">Charity Cup</h2>
-                <p class="tournament-summary">The follow-up event expanding the roster, introducing new sponsors, and pushing the competitive ceiling even higher.</p>
-                <p class="instruction">Click to expand records</p>
-                
-                <div class="details-wrapper">
-                    <div class="details-inner">
-                        <div class="details-content">
-                            <div class="media-frame">
-                                <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&q=80&w=1000" alt="Charity Cup Event">
-                            </div>
-                            
-                            <div class="stats-grid">
-                                <div class="stat-box">
-                                    <div class="stat-label">Category</div>
-                                    <div class="stat-value">Open Division</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-label">Location</div>
-                                    <div class="stat-value">Da Nang, Vietnam</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-label">Champions</div>
-                                    <div class="stat-value">TBD</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-label">Impact</div>
-                                    <div class="stat-value">Expanded Fund</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
+    <meta name="description" content="Historical archive of Beyond the Court tournaments in Da Nang.">
+    
+    <link rel="icon" type="image/png" href="assets/branding/logo/finallogo-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        cream: '#FCF1D0', 
+                        navy: '#0D1C42', 
+                        ink: '#010736', 
+                        sapphire: '#22396F',
+                        iceblue: '#6C8CD5'
+                    },
+                    fontFamily: { display: ['Anton', 'sans-serif'], mono: ['Space Mono', 'monospace'] },
+                    aspectRatio: { 'portrait': '3 / 4', 'tall': '9 / 16' },
+                    transitionTimingFunction: { 'expo': 'cubic-bezier(0.16, 1, 0.3, 1)' }
                 }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.timeline-node').forEach(node => {
-            observer.observe(node);
-        });
-
-        function toggleNode(element) {
-            const parentNode = element.closest('.timeline-node');
-            parentNode.classList.toggle('active');
-            
-            const instructionElement = element.querySelector('.instruction');
-            if (parentNode.classList.contains('active')) {
-                instructionElement.style.opacity = '0';
-            } else {
-                instructionElement.style.opacity = '1';
-                instructionElement.style.transition = 'opacity 0.3s ease 0.3s';
             }
         }
     </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-mono selection:bg-sapphire selection:text-cream antialiased overflow-x-hidden min-h-screen flex flex-col">
+    
+    <div id="custom-cursor"></div>
+    <div class="grid-texture"></div>
+
+    <!-- 3-Zone Centered Navigation Header (Matches Home Page) -->
+    <header class="fixed top-0 left-0 w-full z-40 py-3 sm:py-4 px-4 md:px-12 flex justify-between items-center bg-ink/95 backdrop-blur-md border-b border-cream/20">
+        <!-- Left: Logo & Title -->
+        <a href="index.html" class="flex items-center gap-3 sm:gap-4 cursor-interact group relative z-10 w-auto lg:w-1/4">
+            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Beyond the Court Logo" class="h-10 sm:h-12 w-auto object-contain" decoding="async">
+            <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream group-hover:text-sapphire transition-colors mt-0.5">BEYOND THE COURT</span>
+        </a>
+
+        <!-- Center: Absolute Centered Links -->
+        <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 font-mono text-xs tracking-widest uppercase z-10">
+            <a href="index.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">HOME</a>
+            <a href="about.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">ABOUT US</a>
+            <!-- Active State -->
+            <a href="vault.html" class="text-sapphire font-bold cursor-interact">VAULT</a>
+            <a href="gallery.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">GALLERY</a>
+            <a href="sponsors.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">SPONSORS</a>
+        </nav>
+
+        <!-- Right: Action Button -->
+        <div class="flex items-center justify-end z-10 w-auto lg:w-1/4">
+            <button id="open-drawer-btn" class="cursor-interact group relative px-5 sm:px-7 py-2.5 overflow-hidden border border-cream/50 text-cream font-bold text-xs sm:text-sm tracking-widest uppercase transition-colors duration-300 bg-ink rounded-none">
+                <span class="relative z-10 group-hover:text-ink transition-colors duration-300 text-center block w-full whitespace-nowrap">REACH OUT TO US</span>
+                <div class="absolute inset-0 h-full w-full bg-cream transform scale-x-0 origin-right transition-transform duration-500 ease-expo group-hover:scale-x-100 group-hover:origin-left"></div>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-32 md:pt-40 pb-20 relative z-10">
+        
+        <!-- Ambient Vault Blueprint Vector -->
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
+            <svg class="absolute top-[10%] left-[50%] -translate-x-1/2 w-[120vw] max-w-[1400px] h-auto" viewBox="0 0 1920 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 100 300 L 1820 300" stroke="#FCF1D0" stroke-width="2" stroke-dasharray="10 10"/>
+                <circle cx="960" cy="300" r="150" stroke="#FCF1D0" stroke-width="2" />
+                <rect x="810" y="150" width="300" height="300" stroke="#FCF1D0" stroke-width="1" fill="none" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
+            
+            <!-- Vault Header -->
+            <div class="text-center border-b-2 border-sapphire pb-8 mb-10">
+                <span class="text-sapphire font-bold uppercase tracking-[0.3em] text-xs mb-4 block">HISTORICAL ARCHIVE</span>
+                <h1 class="font-display text-7xl md:text-8xl lg:text-[9rem] uppercase text-cream leading-none tracking-tight m-0">THE VAULT</h1>
+            </div>
+
+            <!-- Interactive Tab System -->
+            <div class="flex overflow-x-auto no-scrollbar gap-4 mb-12 border-b border-cream/20 pb-4">
+                <button class="vault-tab cursor-interact font-mono uppercase tracking-widest text-xs sm:text-sm py-2 px-6 border border-sapphire bg-sapphire text-cream font-bold whitespace-nowrap transition-colors" data-target="first-step">
+                    [ // 01: THE FIRST STEP ]
+                </button>
+                <button class="vault-tab cursor-interact font-mono uppercase tracking-widest text-xs sm:text-sm py-2 px-6 border border-cream/30 bg-ink text-cream/60 hover:bg-navy hover:text-cream whitespace-nowrap transition-colors" data-target="charity-cup">
+                    [ // 02: CHARITY CUP ]
+                </button>
+            </div>
+
+            <!-- Tab Content 1: The First Step -->
+            <div id="first-step" class="vault-content block animate-[fadeIn_0.5s_ease-out]">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    
+                    <!-- Left Column: Tactical Specs -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="bg-navy border border-cream/20 p-6 sm:p-8 relative">
+                            <div class="absolute top-0 right-0 bg-sapphire text-cream text-[9px] font-bold px-2 py-1 uppercase tracking-widest">RECORD_01</div>
+                            <h2 class="font-display text-4xl sm:text-5xl uppercase text-cream tracking-wide mb-6 leading-none mt-4">THE FIRST STEP</h2>
+                            
+                            <div class="grid grid-cols-1 gap-y-4 border-t border-cream/20 pt-6">
+                                <div class="flex justify-between items-end border-b border-cream/10 pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">DATE</span>
+                                    <span class="text-sm font-bold text-cream">MARCH 2026</span>
+                                </div>
+                                <div class="flex justify-between items-end border-b border-cream/10 pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">DIVISION</span>
+                                    <span class="text-sm font-bold text-cream text-right">U21 MEN'S 3V3 BASKETBALL</span>
+                                </div>
+                                <div class="flex justify-between items-end border-b border-cream/10 pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">CHAMPIONS</span>
+                                    <span class="text-sm font-bold text-iceblue">TEAM 67</span>
+                                </div>
+                                <div class="flex justify-between items-end pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">IMPACT FUND</span>
+                                    <span class="text-sm font-bold text-sapphire bg-cream px-2 py-0.5">12,000,000 VND</span>
+                                </div>
+                            </div>
+                            
+                            <p class="mt-8 text-xs font-mono text-cream/70 uppercase leading-relaxed tracking-widest">
+                                The inaugural blueprint. A defining moment that set the standard for competitive streetball and community charity in Da Nang. All profits directly funded local charitable operations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Media Grid -->
+                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="tech-frame bg-ink p-1 h-64 relative group cursor-interact">
+                            <img src="assets/vault/The First Step/_MG_8946.jpg" alt="First Step Action" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute bottom-2 left-2 bg-ink/90 border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">CAM_01</div>
+                        </div>
+                        <div class="tech-frame bg-ink p-1 h-64 relative group cursor-interact">
+                            <img src="assets/vault/The First Step/IMG_6254.jpg" alt="First Step Action" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute bottom-2 left-2 bg-ink/90 border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">CAM_02</div>
+                        </div>
+                        <div class="tech-frame bg-ink p-1 h-64 relative group cursor-interact md:col-span-2">
+                            <img src="assets/vault/The First Step/TFS Charity/IMG_2096.jpg" alt="Charity Outreach" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute top-2 right-2 bg-sapphire text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">IMPACT_DELIVERY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 2: Charity Cup -->
+            <div id="charity-cup" class="vault-content hidden animate-[fadeIn_0.5s_ease-out]">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    
+                    <!-- Left Column: Tactical Specs -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="bg-navy border border-cream/20 p-6 sm:p-8 relative">
+                            <div class="absolute top-0 right-0 bg-sapphire text-cream text-[9px] font-bold px-2 py-1 uppercase tracking-widest">RECORD_02</div>
+                            <h2 class="font-display text-4xl sm:text-5xl uppercase text-cream tracking-wide mb-6 leading-none mt-4">FOOTBALL CHARITY CUP</h2>
+                            
+                            <div class="grid grid-cols-1 gap-y-4 border-t border-cream/20 pt-6">
+                                <div class="flex justify-between items-end border-b border-cream/10 pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">DATE</span>
+                                    <span class="text-sm font-bold text-cream">SUMMER 2026</span>
+                                </div>
+                                <div class="flex justify-between items-end border-b border-cream/10 pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">DIVISION</span>
+                                    <span class="text-sm font-bold text-cream text-right">OPEN DIVISION</span>
+                                </div>
+                                <div class="flex justify-between items-end border-b border-cream/10 pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">CHAMPIONS</span>
+                                    <span class="text-sm font-bold text-iceblue">HOI AN KICKERS</span>
+                                </div>
+                                <div class="flex justify-between items-end pb-2">
+                                    <span class="text-[10px] text-cream/50 uppercase tracking-widest">IMPACT FUND</span>
+                                    <span class="text-sm font-bold text-sapphire bg-cream px-2 py-0.5">40,000,000 VND</span>
+                                </div>
+                            </div>
+                            
+                            <p class="mt-8 text-xs font-mono text-cream/70 uppercase leading-relaxed tracking-widest">
+                                The follow-up operation. Pushing the competitive ceiling into new athletic territory. Expanded rosters, massive community backing, and a significant boost to the local charity fund.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Media Grid -->
+                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="tech-frame bg-ink p-1 h-64 relative group cursor-interact md:col-span-2">
+                            <img src="assets/vault/Charity Cup/SecondStepDay3Night - 00000018.jpg" alt="Charity Cup Finals" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute bottom-2 left-2 bg-ink/90 border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">NIGHT_FINALS</div>
+                        </div>
+                        <div class="tech-frame bg-ink p-1 h-64 relative group cursor-interact">
+                            <img src="assets/vault/Charity Cup/Copy of DSC_0674.jpg" alt="Action Shot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute bottom-2 left-2 bg-ink/90 border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">MATCH_PLAY</div>
+                        </div>
+                        <div class="tech-frame bg-ink p-1 h-64 relative group cursor-interact">
+                            <img src="assets/vault/Charity Cup/DSC_0644.JPG" alt="Action Shot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute bottom-2 left-2 bg-ink/90 border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">PITCH_01</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Blueprint Replicated for Continuity -->
+    <footer class="bg-navy pt-24 pb-12 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center mt-auto border-t border-cream/20">
+        <div class="relative z-10 w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs tracking-widest uppercase">
+            <div class="flex items-center gap-3">
+                <span class="w-2.5 h-2.5 bg-sapphire inline-block"></span>
+                <p>BEYOND THE COURT NGO. DA NANG, VIETNAM.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="sponsors.html" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">SPONSORS</a>
+                <a href="donation.html" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">DONATE</a>
+                <a href="#" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">CONTACT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Vault Tab Logic & Deep Linking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.vault-tab');
+            const contents = document.querySelectorAll('.vault-content');
+
+            // Function to switch active tab and content
+            function switchTab(targetId) {
+                // Remove active classes
+                tabs.forEach(t => {
+                    t.classList.remove('bg-sapphire', 'border-sapphire', 'font-bold', 'text-cream');
+                    t.classList.add('bg-ink', 'border-cream/30', 'text-cream/60');
+                });
+                contents.forEach(c => c.classList.add('hidden'));
+
+                // Add active state to target
+                const activeTab = document.querySelector(`.vault-tab[data-target="${targetId}"]`);
+                const activeContent = document.getElementById(targetId);
+
+                if (activeTab && activeContent) {
+                    activeTab.classList.remove('bg-ink', 'border-cream/30', 'text-cream/60');
+                    activeTab.classList.add('bg-sapphire', 'border-sapphire', 'font-bold', 'text-cream');
+                    activeContent.classList.remove('hidden');
+                }
+            }
+
+            // Click listener for tabs
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    const target = e.target.getAttribute('data-target');
+                    switchTab(target);
+                    // Update URL hash without jumping the page unpleasantly
+                    window.history.pushState(null, null, `#${target}`);
+                });
+            });
+
+            // Deep Linking Check (If user clicks from Home page)
+            if (window.location.hash) {
+                const targetHash = window.location.hash.substring(1); // remove '#'
+                if (document.getElementById(targetHash)) {
+                    switchTab(targetHash);
+                    
+                    // Allow GSAP/Lenis to initialize, then scroll smoothly
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: 0, 
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+
+    <!-- Tailwind keyframes for tab fading -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </body>
 </html>
