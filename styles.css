@@ -180,17 +180,25 @@ html.lenis, html.lenis body {
    UNIVERSAL NAVIGATION
 ========================================= */
 nav {
-    position: fixed;
     top: 0;
-    width: 100%;
     padding: 20px 5%;
-    background: rgba(13, 13, 13, 0.9);
     backdrop-filter: blur(10px);
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Navigation link container reset */
+header nav {
+    position: static !important;
+    background: transparent !important;
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
 }
 
 .nav-logo {
