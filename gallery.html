@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-ink text-cream">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Beyond the Court</title>
+    <meta name="description" content="Cinematic horizontal gallery of Beyond the Court action shots in Da Nang.">
+    
+    <link rel="icon" type="image/png" href="assets/branding/logo/finallogo-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        cream: '#FCF1D0', 
+                        navy: '#0D1C42', 
+                        ink: '#010736', 
+                        sapphire: '#22396F',
+                        iceblue: '#6C8CD5'
+                    },
+                    fontFamily: { display: ['Anton', 'sans-serif'], mono: ['Space Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-mono selection:bg-sapphire selection:text-cream antialiased overflow-x-hidden">
+    
+    <div id="custom-cursor"></div>
+    <div class="grid-texture"></div>
+
+    <!-- FIXED & CENTERED 3-ZONE NAVIGATION BAR (SMOKE BLUE) -->
+    <header class="fixed top-0 left-0 w-full z-50 h-20 px-4 md:px-12 flex justify-between items-center bg-[#1a2b4c]/85 backdrop-blur-xl border-b border-cream/20 shadow-lg transition-all">
+        <div class="flex-1 flex justify-start items-center">
+            <a href="index.html" class="flex items-center gap-3 cursor-interact group relative z-10 w-max">
+                <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Beyond the Court Logo" class="h-10 sm:h-12 w-auto object-contain shrink-0" decoding="async">
+                <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream group-hover:text-sapphire transition-colors mt-1 whitespace-nowrap hidden sm:block">BEYOND THE COURT</span>
+            </a>
+        </div>
+
+        <nav class="hidden lg:flex flex-none items-center gap-6 font-mono text-xs tracking-widest uppercase z-10">
+            <a href="index.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">HOME</a>
+            <a href="about.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">ABOUT US</a>
+            <a href="vault.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">VAULT</a>
+            <a href="gallery.html" class="text-sapphire font-bold cursor-interact">GALLERY</a>
+            <a href="sponsors.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">SPONSORS</a>
+        </nav>
+
+        <div class="flex-1 flex justify-end items-center z-10">
+            <button id="open-drawer-btn" class="cursor-interact group relative px-6 py-2.5 overflow-hidden border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase transition-colors duration-300 bg-ink rounded-none shrink-0">
+                <span class="relative z-10 group-hover:text-ink transition-colors duration-300">REACH OUT TO US</span>
+                <div class="absolute inset-0 h-full w-full bg-cream transform scale-x-0 origin-right transition-transform duration-500 ease-expo group-hover:scale-x-100 group-hover:origin-left"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sticky Category Filter -->
+    <div class="fixed top-24 left-1/2 -translate-x-1/2 z-40 bg-[#0d1c42]/90 backdrop-blur-md border border-cream/20 px-6 py-3 flex gap-6 sm:gap-10 font-mono text-[10px] sm:text-xs uppercase tracking-widest shadow-2xl rounded-full">
+        <a href="#section-1" class="gallery-nav-link text-sapphire font-bold cursor-interact transition-colors">THE FIRST STEP</a>
+        <a href="#section-2" class="gallery-nav-link hover:text-sapphire text-cream transition-colors cursor-interact">CHARITY CUP</a>
+        <a href="#section-3" class="gallery-nav-link hover:text-sapphire text-cream transition-colors cursor-interact">SPONSORS</a>
+        <a href="#section-4" class="gallery-nav-link hover:text-sapphire text-cream transition-colors cursor-interact">CHARITY IMPACT</a>
+    </div>
+
+    <!-- The 400vh tall wrapper that allows for vertical scrolling -->
+    <div class="h-[400vh] w-full relative" id="horizontal-scroll-wrapper">
+        
+        <!-- The sticky container that acts as the "camera" window -->
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex bg-ink">
+            
+            <!-- The massive 400vw wide strip containing all panels -->
+            <div class="flex w-[400vw] h-full" id="horizontal-scroll-content">
+                
+                <!-- Panel 1: The First Step -->
+                <section class="w-screen h-screen flex flex-col justify-center items-center relative px-20 border-r border-cream/10" id="section-1">
+                    <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15vw] text-cream/5 leading-none pointer-events-none whitespace-nowrap z-0">FIRST STEP</h1>
+                    <div class="relative z-10 w-full max-w-7xl grid grid-cols-3 gap-6 h-[60vh] mt-20">
+                        <div class="tech-frame bg-navy col-span-2 row-span-2 cursor-interact overflow-hidden group relative">
+                            <img src="assets/vault/The First Step/_MG_8946.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-4 left-4 bg-ink/90 border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">RECORD_01</div>
+                        </div>
+                        <div class="tech-frame bg-navy cursor-interact overflow-hidden group">
+                            <img src="assets/vault/The First Step/IMG_2625.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="tech-frame bg-navy cursor-interact overflow-hidden group">
+                            <img src="assets/vault/The First Step/IMG_3477.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Panel 2: Charity Cup -->
+                <section class="w-screen h-screen flex flex-col justify-center items-center relative px-20 border-r border-cream/10" id="section-2">
+                    <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15vw] text-cream/5 leading-none pointer-events-none whitespace-nowrap z-0">CHARITY CUP</h1>
+                    <div class="relative z-10 w-full max-w-7xl grid grid-cols-4 gap-6 h-[60vh] mt-20">
+                        <div class="tech-frame bg-navy col-span-1 row-span-2 cursor-interact overflow-hidden group relative">
+                            <img src="assets/vault/Charity Cup/DSC_0644.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-sapphire text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">PITCH_01</div>
+                        </div>
+                        <div class="tech-frame bg-navy col-span-2 row-span-2 cursor-interact overflow-hidden group relative">
+                            <img src="assets/vault/Charity Cup/SecondStepDay3Night - 00000018.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="tech-frame bg-navy col-span-1 row-span-1 cursor-interact overflow-hidden group">
+                            <img src="assets/vault/Charity Cup/Copy of DSC_0674.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="tech-frame bg-navy col-span-1 row-span-1 cursor-interact overflow-hidden group">
+                            <img src="assets/vault/Charity Cup/SecondStepDay2 - 00000021.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Panel 3: Sponsors -->
+                <section class="w-screen h-screen flex flex-col justify-center items-center relative px-20 border-r border-cream/10" id="section-3">
+                    <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15vw] text-cream/5 leading-none pointer-events-none whitespace-nowrap z-0">SPONSORS</h1>
+                    <div class="relative z-10 w-full max-w-5xl grid grid-cols-2 gap-10 h-[50vh] mt-20">
+                        <div class="tech-frame bg-navy flex items-center justify-center p-10 cursor-interact group overflow-hidden relative">
+                            <img src="assets/branding/logo/logohead_icemandrey_nobg.png" class="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
+                            <div class="absolute bottom-4 right-4 text-[9px] font-mono tracking-widest text-cream/40 group-hover:text-cream transition-colors">SPONSOR_01</div>
+                        </div>
+                        <div class="tech-frame bg-navy flex items-center justify-center p-0 cursor-interact group overflow-hidden relative">
+                            <img src="assets/sponsors/NSA/DSC_0032.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-4 right-4 bg-ink border border-cream/20 px-2 py-0.5 text-[9px] font-mono tracking-widest text-cream">NSA_PARTNER</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Panel 4: Charity -->
+                <section class="w-screen h-screen flex flex-col justify-center items-center relative px-20" id="section-4">
+                    <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15vw] text-cream/5 leading-none pointer-events-none whitespace-nowrap z-0">CHARITY</h1>
+                    <div class="relative z-10 w-full max-w-6xl grid grid-cols-2 gap-6 h-[60vh] mt-20">
+                        <div class="flex flex-col justify-center pr-10 border-r border-cream/20">
+                            <h2 class="font-display text-5xl uppercase text-cream tracking-wide mb-4">100% IMPACT</h2>
+                            <p class="font-mono text-sm text-cream/70 tracking-widest leading-relaxed">
+                                Every drop of sweat on the court translates directly to community impact. Beyond the Court directs all tournament profits toward local charitable operations in Da Nang, creating a sustainable bridge between high-intensity athletics and community resilience.
+                            </p>
+                            <a href="donation.html" class="mt-8 bg-sapphire text-cream border border-sapphire px-6 py-3 font-bold text-xs uppercase tracking-widest w-max hover:bg-cream hover:text-ink transition-colors cursor-interact">
+                                DONATE NOW
+                            </a>
+                        </div>
+                        <div class="tech-frame bg-navy cursor-interact overflow-hidden group relative ml-10">
+                            <img src="assets/vault/The First Step/TFS Charity/IMG_2096.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-4 right-4 bg-ink border border-cream/30 text-cream px-2 py-0.5 text-[9px] font-bold z-10 uppercase tracking-widest">COMMUNITY_OUTREACH</div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Horizontal Scroll Logic -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let horizontalWrapper = document.querySelector("#horizontal-scroll-content");
+        let sections = gsap.utils.toArray("#horizontal-scroll-content section");
+        let navLinks = document.querySelectorAll(".gallery-nav-link");
+
+        // The tween that slides the reel to the left
+        let scrollTween = gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#horizontal-scroll-wrapper",
+                pin: true,
+                scrub: 1,
+                end: () => "+=" + horizontalWrapper.offsetWidth
+            }
+        });
+
+        // Active state for the sticky top pill based on scroll position
+        sections.forEach((section, i) => {
+            ScrollTrigger.create({
+                trigger: section,
+                containerAnimation: scrollTween,
+                start: "left center",
+                end: "right center",
+                onToggle: self => {
+                    if (self.isActive) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('text-sapphire', 'font-bold');
+                            link.classList.add('text-cream', 'hover:text-sapphire');
+                        });
+                        navLinks[i].classList.remove('text-cream', 'hover:text-sapphire');
+                        navLinks[i].classList.add('text-sapphire', 'font-bold');
+                    }
+                }
+            });
+        });
+
+        // Clicking a nav link scrolls to exactly the right mathematical spot
+        navLinks.forEach((link, i) => {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                let wrapper = document.querySelector("#horizontal-scroll-wrapper");
+                let scrollDistance = wrapper.offsetHeight - window.innerHeight; 
+                let segment = scrollDistance / (sections.length - 1);
+                
+                // Scroll window smoothly using Lenis (if active in script.js) or native
+                window.scrollTo({
+                    top: wrapper.offsetTop + (segment * i),
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
