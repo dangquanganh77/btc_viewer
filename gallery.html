@@ -21,7 +21,8 @@
                         navy: '#0D1C42', 
                         ink: '#010736', 
                         sapphire: '#22396F',
-                        iceblue: '#6C8CD5'
+                        iceblue: '#6C8CD5',
+                        smokeblue: '#14224A'
                     },
                     fontFamily: { display: ['Anton', 'sans-serif'], mono: ['Space Mono', 'monospace'] }
                 }
@@ -35,16 +36,18 @@
     <div id="custom-cursor"></div>
     <div class="grid-texture"></div>
 
-    <!-- FIXED & CENTERED 3-ZONE NAVIGATION BAR (SMOKE BLUE) -->
-    <header class="fixed top-0 left-0 w-full z-50 h-20 px-4 md:px-12 flex justify-between items-center bg-[#1a2b4c]/85 backdrop-blur-xl border-b border-cream/20 shadow-lg transition-all">
+    <!-- CLEAN 3-ZONE SMOKE BLUE HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 h-20 px-4 md:px-12 flex items-center justify-between bg-smokeblue/85 backdrop-blur-xl border-b border-cream/20 shadow-2xl transition-all">
+        <!-- Zone 1: Logo & Text -->
         <div class="flex-1 flex justify-start items-center">
-            <a href="index.html" class="flex items-center gap-3 cursor-interact group relative z-10 w-max">
+            <a href="index.html" class="flex items-center gap-3 cursor-interact group select-none">
                 <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Beyond the Court Logo" class="h-10 sm:h-12 w-auto object-contain shrink-0" decoding="async">
-                <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream group-hover:text-sapphire transition-colors mt-1 whitespace-nowrap hidden sm:block">BEYOND THE COURT</span>
+                <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream group-hover:text-sapphire transition-colors mt-0.5 whitespace-nowrap">BEYOND THE COURT</span>
             </a>
         </div>
 
-        <nav class="hidden lg:flex flex-none items-center gap-6 font-mono text-xs tracking-widest uppercase z-10">
+        <!-- Zone 2: Centered Links -->
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 font-mono text-[11px] xl:text-xs tracking-widest uppercase shrink-0">
             <a href="index.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">HOME</a>
             <a href="about.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">ABOUT US</a>
             <a href="vault.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">VAULT</a>
@@ -52,7 +55,8 @@
             <a href="sponsors.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">SPONSORS</a>
         </nav>
 
-        <div class="flex-1 flex justify-end items-center z-10">
+        <!-- Zone 3: Button -->
+        <div class="flex-1 flex justify-end items-center">
             <button id="open-drawer-btn" class="cursor-interact group relative px-6 py-2.5 overflow-hidden border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase transition-colors duration-300 bg-ink rounded-none shrink-0">
                 <span class="relative z-10 group-hover:text-ink transition-colors duration-300">REACH OUT TO US</span>
                 <div class="absolute inset-0 h-full w-full bg-cream transform scale-x-0 origin-right transition-transform duration-500 ease-expo group-hover:scale-x-100 group-hover:origin-left"></div>
@@ -68,13 +72,9 @@
         <a href="#section-4" class="gallery-nav-link hover:text-sapphire text-cream transition-colors cursor-interact">CHARITY IMPACT</a>
     </div>
 
-    <!-- The 400vh tall wrapper that allows for vertical scrolling -->
+    <!-- 400vh tall wrapper for horizontal scrolling -->
     <div class="h-[400vh] w-full relative" id="horizontal-scroll-wrapper">
-        
-        <!-- The sticky container that acts as the "camera" window -->
         <div class="sticky top-0 h-screen w-full overflow-hidden flex bg-ink">
-            
-            <!-- The massive 400vw wide strip containing all panels -->
             <div class="flex w-[400vw] h-full" id="horizontal-scroll-content">
                 
                 <!-- Panel 1: The First Step -->
@@ -167,7 +167,6 @@
         let sections = gsap.utils.toArray("#horizontal-scroll-content section");
         let navLinks = document.querySelectorAll(".gallery-nav-link");
 
-        // The tween that slides the reel to the left
         let scrollTween = gsap.to(sections, {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
@@ -179,7 +178,6 @@
             }
         });
 
-        // Active state for the sticky top pill based on scroll position
         sections.forEach((section, i) => {
             ScrollTrigger.create({
                 trigger: section,
@@ -199,7 +197,6 @@
             });
         });
 
-        // Clicking a nav link scrolls to exactly the right mathematical spot
         navLinks.forEach((link, i) => {
             link.addEventListener("click", function(e) {
                 e.preventDefault();
@@ -207,7 +204,6 @@
                 let scrollDistance = wrapper.offsetHeight - window.innerHeight; 
                 let segment = scrollDistance / (sections.length - 1);
                 
-                // Scroll window smoothly using Lenis (if active in script.js) or native
                 window.scrollTo({
                     top: wrapper.offsetTop + (segment * i),
                     behavior: 'smooth'
