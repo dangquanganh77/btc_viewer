@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-ink text-cream">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Beyond the Court</title>
+    <meta name="description" content="The origin, mission, and team behind Beyond the Court Da Nang.">
+    
+    <link rel="icon" type="image/png" href="assets/branding/logo/finallogo-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        cream: '#FCF1D0', 
+                        navy: '#0D1C42', 
+                        ink: '#010736', 
+                        sapphire: '#22396F',
+                        iceblue: '#6C8CD5',
+                        smokeblue: '#14224A'
+                    },
+                    fontFamily: { display: ['Anton', 'sans-serif'], mono: ['Space Mono', 'monospace'] },
+                    aspectRatio: { 'portrait': '3 / 4', 'tall': '9 / 16' },
+                    transitionTimingFunction: { 'expo': 'cubic-bezier(0.16, 1, 0.3, 1)' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-mono selection:bg-sapphire selection:text-cream antialiased overflow-x-hidden">
+    
+    <div id="custom-cursor"></div>
+    <div class="grid-texture"></div>
+
+    <!-- CLEAN 3-ZONE SMOKE BLUE HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 h-20 px-4 md:px-12 flex items-center justify-between bg-smokeblue/85 backdrop-blur-xl border-b border-cream/20 shadow-2xl transition-all">
+        <div class="flex-1 flex justify-start items-center">
+            <a href="index.html" class="flex items-center gap-3 cursor-interact group select-none">
+                <img src="assets/branding/logo/logohead_icemandrey_nobg.png" alt="Beyond the Court Logo" class="h-10 sm:h-12 w-auto object-contain shrink-0" decoding="async">
+                <span class="font-display text-xl md:text-2xl uppercase tracking-widest text-cream group-hover:text-sapphire transition-colors mt-0.5 whitespace-nowrap hidden sm:block">BEYOND THE COURT</span>
+            </a>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 font-mono text-[11px] xl:text-xs tracking-widest uppercase shrink-0">
+            <a href="index.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">HOME</a>
+            <a href="about.html" class="text-sapphire font-bold cursor-interact">ABOUT US</a>
+            <a href="vault.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">VAULT</a>
+            <a href="gallery.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">GALLERY</a>
+            <a href="sponsors.html" class="text-cream hover:text-sapphire transition-colors cursor-interact">SPONSORS</a>
+        </nav>
+
+        <div class="flex-1 flex justify-end items-center">
+            <button id="open-drawer-btn" class="cursor-interact group relative px-6 py-2.5 overflow-hidden border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase transition-colors duration-300 bg-ink rounded-none shrink-0">
+                <span class="relative z-10 group-hover:text-ink transition-colors duration-300">REACH OUT TO US</span>
+                <div class="absolute inset-0 h-full w-full bg-cream transform scale-x-0 origin-right transition-transform duration-500 ease-expo group-hover:scale-x-100 group-hover:origin-left"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Partner Slide-out Drawer -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-ink/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none"></div>
+    <aside id="partner-drawer" class="fixed top-0 right-0 w-full max-w-lg h-full bg-navy text-cream z-50 transform translate-x-full transition-transform duration-700 ease-expo flex flex-col p-8 md:p-14 overflow-y-auto border-l border-cream/20">
+        <div class="flex justify-between items-center mb-12 pt-4">
+            <h2 class="font-display text-3xl sm:text-4xl text-cream uppercase tracking-wider">JOIN THE MOVEMENT</h2>
+            <button id="close-drawer-btn" class="cursor-interact text-cream hover:text-sapphire transition-colors p-2 border border-cream/30 bg-ink">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="mb-10 text-cream/80 text-xs sm:text-sm font-light leading-relaxed border-l-2 border-sapphire pl-4">
+            Whether you want to sponsor a tournament, volunteer, or integrate your brand into our athletic network in Da Nang, we want to hear from you.
+        </div>
+        <form class="flex flex-col gap-9">
+            <div class="relative pt-4">
+                <input type="text" id="name" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors rounded-none" placeholder="Full Name">
+                <label for="name" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">FULL NAME</label>
+            </div>
+            <div class="relative pt-4">
+                <input type="email" id="email" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors rounded-none" placeholder="Email Address">
+                <label for="email" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">EMAIL ADDRESS</label>
+            </div>
+            <div class="relative pt-4">
+                <textarea id="message" rows="4" class="cursor-interact peer w-full bg-ink border border-cream/30 px-4 py-3.5 text-cream placeholder-transparent focus:outline-none focus:border-iceblue transition-colors resize-none rounded-none" placeholder="Inquiry"></textarea>
+                <label for="message" class="absolute left-1 top-[-8px] text-cream text-xs font-bold tracking-widest uppercase transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:left-4 peer-placeholder-shown:text-cream/60 peer-placeholder-shown:text-xs peer-placeholder-shown:font-normal peer-focus:top-[-8px] peer-focus:left-1 peer-focus:text-iceblue peer-focus:font-bold">INQUIRY</label>
+            </div>
+            <button type="button" class="cursor-interact mt-2 bg-sapphire text-cream py-4 font-bold tracking-widest uppercase hover:bg-cream hover:text-ink transition-colors duration-300 border border-sapphire hover:border-cream rounded-none">Submit Request</button>
+        </form>
+    </aside>
+
+    <main>
+        <!-- Act 1: Hero & Origin -->
+        <section class="relative pt-48 md:pt-60 pb-20 px-4 md:px-12 bg-ink overflow-hidden border-b border-cream/10">
+            <div class="absolute top-1/4 right-[-10%] w-[60vw] h-[60vw] bg-sapphire/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
+            
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-left mb-16">
+                    <span class="text-sapphire font-bold uppercase tracking-[0.3em] text-xs mb-4 block border-l-2 border-sapphire pl-3">ACT_01: ORIGIN</span>
+                    <h1 class="font-display text-[12vw] md:text-[8vw] uppercase text-cream leading-none tracking-tight m-0">THE MANIFESTO</h1>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+                    <!-- Text Column -->
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="font-display text-4xl md:text-5xl uppercase text-transparent stroke-cream mb-6 tracking-wide leading-tight">BORN ON A RENTED COURT.</h2>
+                        <div class="space-y-6 text-sm font-mono text-cream/70 tracking-widest leading-relaxed border-l border-cream/20 pl-6 relative">
+                            <div class="absolute top-0 -left-1.5 w-3 h-3 bg-sapphire"></div>
+                            <p>Beyond the Court started with a simple observation by a group of high school students in Da Nang: the youth athletic scene had immense untapped potential, but lacked a unified platform that meant something more than just winning.</p>
+                            <p>In March 2026, we launched "The First Step"—a U21 3v3 basketball tournament. We handled the logistics, the sponsors, the match schedules, and the venue. The rule was simple: bring absolute intensity to the court, and give absolute support to the city.</p>
+                            <p class="text-cream font-bold bg-navy inline-block p-2 border border-cream/20">100% of tournament profits fund local charity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Staggered Image Grid -->
+                    <div class="w-full lg:w-1/2 relative h-[60vh] sm:h-[70vh]">
+                        <div class="absolute top-0 right-0 w-[65%] h-[60%] tilt-card cursor-interact z-10 perspective-1000">
+                            <div class="tilt-inner w-full h-full tech-frame bg-navy img-hover">
+                                <img src="assets/vault/Charity Cup/Copy of SecondStepDay3Morn - 00000037.jpg" alt="Team Planning" class="w-full h-full object-cover">
+                                <div class="absolute top-3 left-3 bg-ink/90 text-cream px-2 py-0.5 text-[9px] font-bold z-10 border border-cream/30">HQ_LOGISTICS</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-[60%] h-[55%] tilt-card cursor-interact z-20 perspective-1000 transform -translate-y-8">
+                            <div class="tilt-inner w-full h-full tech-frame bg-sapphire p-1 img-hover">
+                                <img src="assets/vault/The First Step/IMG_2625.JPG" alt="The Crew" class="w-full h-full object-cover">
+                                <div class="absolute bottom-3 right-3 bg-cream text-ink px-2 py-0.5 text-[9px] font-bold z-10">THE_CREW</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Act 2: The Mission (High Contrast) -->
+        <section class="py-32 px-4 md:px-12 bg-sapphire relative overflow-hidden flex items-center justify-center text-center z-10">
+            <div class="paper-tactile-texture opacity-30"></div>
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FCF1D0" stroke-width="1"/></pattern></defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto">
+                <span class="text-cream font-mono uppercase tracking-[0.4em] text-xs mb-8 block bg-ink inline-block px-4 py-1">ACT_02: MISSION</span>
+                <h2 class="font-display text-5xl sm:text-6xl md:text-8xl uppercase text-cream tracking-tight leading-none mb-8">
+                    ELEVATE THE GAME.<br>UPLIFT THE CITY.
+                </h2>
+                <p class="font-mono text-sm sm:text-base text-cream/90 uppercase tracking-widest max-w-2xl mx-auto leading-loose border-t border-b border-cream/30 py-6">
+                    We organize high-tier youth athletic events—from 3v3 basketball to open division football—to create a professional ecosystem for Da Nang's youth. The sweat equity generated by these athletes directly translates into financial aid for those who need it most.
+                </p>
+            </div>
+        </section>
+
+        <!-- Act 3: The Philosophy / Impact Grid -->
+        <section class="py-24 md:py-32 px-4 md:px-12 bg-navy border-b border-cream/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-sapphire font-bold uppercase tracking-[0.3em] text-xs mb-4 block">ACT_03: PHILOSOPHY</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Pillar 1 -->
+                    <div class="flex flex-col bg-ink border border-cream/20 group hover:border-sapphire transition-colors duration-500">
+                        <div class="h-48 sm:h-64 tech-frame border-none overflow-hidden relative">
+                            <img src="assets/vault/Charity Cup/DSC_0615.JPG" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-sapphire/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-display text-3xl text-cream uppercase tracking-wide mb-3">01. RAW COMPETITION</h3>
+                            <p class="font-mono text-xs text-cream/60 tracking-widest leading-relaxed">No shortcuts. We engineer tournaments that demand peak performance, professional logistics, and absolute grit from every team that steps on the court.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="flex flex-col bg-ink border border-cream/20 group hover:border-sapphire transition-colors duration-500 md:translate-y-8">
+                        <div class="h-48 sm:h-64 tech-frame border-none overflow-hidden relative">
+                            <img src="assets/vault/The First Step/TFS Charity/IMG_2096.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-sapphire/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-display text-3xl text-cream uppercase tracking-wide mb-3">02. TANGIBLE IMPACT</h3>
+                            <p class="font-mono text-xs text-cream/60 tracking-widest leading-relaxed">Every event is a charity engine. Registration fees and sponsor funds are rigorously managed, with 100% of event profits delivered directly to Da Nang's local charities.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="flex flex-col bg-ink border border-cream/20 group hover:border-sapphire transition-colors duration-500 md:translate-y-16">
+                        <div class="h-48 sm:h-64 tech-frame border-none overflow-hidden relative">
+                            <img src="assets/vault/Charity Cup/SecondStepDay2 - 00000021.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-sapphire/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-display text-3xl text-cream uppercase tracking-wide mb-3">03. YOUTH LED</h3>
+                            <p class="font-mono text-xs text-cream/60 tracking-widest leading-relaxed">Operated entirely by a dedicated student-led roster. We draft the rules, secure the venues, manage the media, and execute the game-day operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Act 4: The Team Message -->
+        <section class="py-24 md:py-32 px-4 md:px-12 bg-ink relative overflow-hidden">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                <div class="w-full md:w-1/2 tech-frame bg-navy p-2 tilt-card cursor-interact perspective-1000">
+                    <div class="tilt-inner w-full h-full img-hover">
+                        <!-- Group Photo -->
+                        <img src="assets/vault/Charity Cup/Copy of SecondStepDay3Morn - 00000037.jpg" class="w-full h-[50vh] object-cover" alt="The Beyond the Court Team">
+                        <div class="absolute top-4 left-4 bg-sapphire text-cream px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest border border-cream/30">
+                            THE ROSTER // 2026
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <span class="text-sapphire font-bold uppercase tracking-[0.3em] text-xs mb-6 block border-l-2 border-sapphire pl-3">ACT_04: DISPATCH</span>
+                    <div class="bg-[#080d24] border border-cream/10 p-8 sm:p-10 relative">
+                        <div class="absolute top-2 right-2 flex gap-1">
+                            <span class="w-2 h-2 rounded-full bg-red-500/50"></span>
+                            <span class="w-2 h-2 rounded-full bg-yellow-500/50"></span>
+                            <span class="w-2 h-2 rounded-full bg-green-500/50"></span>
+                        </div>
+                        <h3 class="font-display text-3xl text-cream uppercase tracking-wide mb-6">A MESSAGE FROM THE DIRECTORS</h3>
+                        <div class="font-mono text-sm text-cream/70 tracking-widest leading-loose space-y-4">
+                            <p>> When we launched Beyond the Court, the goal was never just to host a basketball game.</p>
+                            <p>> It was to prove that our generation in Da Nang has the operational capacity to build something massive from scratch, and the empathy to ensure it serves a greater purpose.</p>
+                            <p>> To every athlete who leaves it all on the court, and to every sponsor who trusts our vision: thank you. The movement is just beginning.</p>
+                            <p class="text-sapphire mt-8 font-bold">> // SYSTEM.LOG: SIGNED, BTC ORG.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. Footer (Matches Global) -->
+    <footer class="bg-navy pt-24 pb-12 px-4 md:px-12 relative overflow-hidden flex flex-col items-center justify-center text-center border-t border-cream/20">
+        <div class="relative z-10 w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-6 text-cream/60 font-mono text-xs tracking-widest uppercase">
+            <div class="flex items-center gap-3">
+                <span class="w-2.5 h-2.5 bg-sapphire inline-block"></span>
+                <p>BEYOND THE COURT NGO. DA NANG, VIETNAM.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="sponsors.html" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">SPONSORS</a>
+                <a href="donation.html" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">DONATE</a>
+                <a href="#" class="cursor-interact hover:text-sapphire transition-colors pb-0.5 border-b border-transparent hover:border-sapphire">CONTACT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
