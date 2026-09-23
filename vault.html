@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vault | Beyond the Court</title>
-    <!-- Google Fonts for that sleek, modern editorial feel -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables - Matching a dark, high-contrast athletic aesthetic */
         :root {
             --bg-color: #0d0d0d;
             --surface-color: #1a1a1a;
             --surface-hover: #262626;
             --text-primary: #f5f5f5;
             --text-secondary: #a0a0a0;
-            --accent-color: #ff5e00; /* High energy basketball orange/red */
+            --accent-color: #ff5e00;
             --accent-glow: rgba(255, 94, 0, 0.4);
             --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Base & Reset */
         * {
             margin: 0;
             padding: 0;
@@ -39,7 +36,6 @@
             text-transform: uppercase;
         }
 
-        /* Navigation Placeholder (To match your main site) */
         nav {
             position: fixed;
             top: 0;
@@ -62,6 +58,11 @@
             text-decoration: none;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
@@ -75,7 +76,20 @@
             color: var(--accent-color);
         }
 
-        /* Hero Section */
+        .nav-donate-btn {
+            background: var(--accent-color);
+            color: var(--bg-color) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
         .vault-hero {
             padding: 150px 5% 80px;
             text-align: center;
@@ -97,7 +111,6 @@
             margin: 0 auto;
         }
 
-        /* Timeline Container */
         .timeline-container {
             position: relative;
             max-width: 1200px;
@@ -105,7 +118,6 @@
             padding: 40px 5% 100px;
         }
 
-        /* The Glowing Center Line */
         .timeline-container::before {
             content: '';
             position: absolute;
@@ -118,14 +130,13 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
         }
 
-        /* Timeline Nodes (Individual Tournaments) */
         .timeline-node {
             position: relative;
             margin-bottom: 60px;
             width: 100%;
             display: flex;
             justify-content: center;
-            opacity: 0; /* For scroll animation */
+            opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -135,7 +146,6 @@
             transform: translateY(0);
         }
 
-        /* The Glowing Dot */
         .timeline-dot {
             position: absolute;
             left: 50%;
@@ -157,7 +167,6 @@
             transform: translateX(-50%) scale(1.3);
         }
 
-        /* Timeline Content Card */
         .timeline-content {
             width: 45%;
             background: var(--surface-color);
@@ -174,7 +183,6 @@
             transform: translateY(-5px);
         }
 
-        /* Alternating left/right layout */
         .timeline-node:nth-child(odd) .timeline-content {
             margin-right: 55%;
             text-align: right;
@@ -204,7 +212,6 @@
             font-size: 0.95rem;
         }
 
-        /* Expandable Deep-Dive Container (Smooth Grid Animation) */
         .details-wrapper {
             display: grid;
             grid-template-rows: 0fr;
@@ -217,7 +224,7 @@
         }
 
         .details-inner {
-            overflow: hidden; /* Crucial for the grid height animation to work smoothly */
+            overflow: hidden;
         }
 
         .details-content {
@@ -228,20 +235,19 @@
             gap: 20px;
         }
 
-        /* Strict Image Framing */
         .media-frame {
             width: 100%;
-            height: 250px; /* Controlled height */
+            height: 250px;
             border-radius: 8px;
             overflow: hidden;
-            background: #111; /* Fallback */
+            background: #111;
             position: relative;
         }
 
         .media-frame img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures images fill the frame without distortion */
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
@@ -249,7 +255,6 @@
             transform: scale(1.05);
         }
 
-        /* Stats Grid inside the expanded view */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -264,7 +269,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Override alignment for odd cards so inner grid aligns properly */
         .timeline-node:nth-child(odd) .stat-box {
             text-align: right;
         }
@@ -291,55 +295,37 @@
             font-style: italic;
         }
 
-        /* Responsive Design */
         @media (max-width: 900px) {
-            .timeline-container::before {
-                left: 20px;
-            }
-            .timeline-dot {
-                left: 20px;
-            }
-            .timeline-node.active .timeline-dot {
-                transform: translateX(-50%) scale(1.3);
-            }
-            .timeline-content {
-                width: calc(100% - 60px);
-            }
+            .timeline-container::before { left: 20px; }
+            .timeline-dot { left: 20px; }
+            .timeline-node.active .timeline-dot { transform: translateX(-50%) scale(1.3); }
+            .timeline-content { width: calc(100% - 60px); }
             .timeline-node:nth-child(odd) .timeline-content,
-            .timeline-node:nth-child(even) .timeline-content {
-                margin-left: 60px;
-                margin-right: 0;
-                text-align: left;
-            }
-            .timeline-node:nth-child(odd) .stat-box {
-                text-align: left;
-            }
+            .timeline-node:nth-child(even) .timeline-content { margin-left: 60px; margin-right: 0; text-align: left; }
+            .timeline-node:nth-child(odd) .stat-box { text-align: left; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Placeholder Navigation -->
     <nav>
         <a href="index.html" class="nav-logo">BEYOND THE COURT</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
             <a href="vault.html" style="color: var(--accent-color);">Vault</a>
             <a href="gallery.html">Gallery</a>
-            <a href="donation.html">Donation</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="donation.html" class="nav-donate-btn">Donate</a>
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="vault-hero">
         <h1>THE VAULT</h1>
         <p>The historical archive. A complete record of the venues, the victors, and the community impact that built our legacy.</p>
     </section>
 
-    <!-- Interactive Timeline -->
     <main class="timeline-container">
-        
-        <!-- Tournament Node 1 -->
         <div class="timeline-node">
             <div class="timeline-dot"></div>
             <div class="timeline-content" onclick="toggleNode(this)">
@@ -348,13 +334,10 @@
                 <p class="tournament-summary">Our inaugural U21 3v3 tournament. A defining moment that set the standard for competitive streetball and community charity in the city.</p>
                 <p class="instruction">Click to expand records</p>
                 
-                <!-- Expandable Deep-Dive -->
                 <div class="details-wrapper">
                     <div class="details-inner">
                         <div class="details-content">
-                            <!-- Strictly Framed Image -->
                             <div class="media-frame">
-                                <!-- Replace src with your actual Vault image from the directory -->
                                 <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=1000" alt="The First Step Tournament Action">
                             </div>
                             
@@ -386,7 +369,6 @@
             </div>
         </div>
 
-        <!-- Tournament Node 2 (Template for future events) -->
         <div class="timeline-node">
             <div class="timeline-dot"></div>
             <div class="timeline-content" onclick="toggleNode(this)">
@@ -425,46 +407,31 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <script>
-        // Smooth Intersection Observer for Scroll Animations
-        // This ensures the page stays highly performant while scrolling
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.15 // Triggers when 15% of the node is visible
+            threshold: 0.15
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Optional: Stop observing once visible if you don't want it to fade out when scrolling up
-                    // observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
 
-        // Target all timeline nodes
         document.querySelectorAll('.timeline-node').forEach(node => {
             observer.observe(node);
         });
 
-        // Toggle Expandable Content
-        // Utilizing class toggling for buttery smooth CSS Grid height animations
         function toggleNode(element) {
             const parentNode = element.closest('.timeline-node');
-            
-            // Optional: Close other open nodes (Accordion style)
-            // document.querySelectorAll('.timeline-node').forEach(node => {
-            //     if (node !== parentNode) node.classList.remove('active');
-            // });
-
             parentNode.classList.toggle('active');
             
-            // Toggle instruction text logic
             const instructionElement = element.querySelector('.instruction');
             if (parentNode.classList.contains('active')) {
                 instructionElement.style.opacity = '0';
