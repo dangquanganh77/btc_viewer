@@ -175,3 +175,105 @@ html.lenis, html.lenis body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* =========================================
+   UNIVERSAL NAVIGATION
+========================================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: rgba(13, 13, 13, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-logo {
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-donate-btn {
+    background: var(--accent-color);
+    color: var(--bg-color) !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.nav-donate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* =========================================
+   UNIVERSAL BUTTONS & LINKS
+========================================= */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.btn-primary { 
+    background: var(--accent-color); 
+    color: #000; 
+}
+
+.btn-primary:hover { 
+    box-shadow: 0 0 15px var(--accent-glow); 
+}
+
+.btn-secondary { 
+    border: 2px solid #fff; 
+    color: #fff; 
+}
+
+.btn-secondary:hover { 
+    background: #fff; 
+    color: #000; 
+}
+
+.text-link {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.text-link:hover { 
+    color: #fff; 
+}
